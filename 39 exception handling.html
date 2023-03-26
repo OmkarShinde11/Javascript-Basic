@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exception handling</title>
+</head>
+<body>
+  <h1 id="heading-1"></h1>
+  <script>
+  //  let heading=document.getElementById('heading-1');
+   let user=prompt('Enter a name');
+   user=user.toLowerCase();
+   try{
+    if(user!=='omkar'){
+      throw "unknown_user"
+    }
+    else{
+     document.getElementById('heading-1').innerText='Welcome '+user+' you have sucessfully login on this page,hope you enjoy'
+    }
+   }
+   catch(error){
+    if(error=="unknown_user"){
+      document.getElementById('heading-1').innerText='Sorry '+user+' you dont login on this page'
+    }
+   }
+   finally{
+     document.getElementById('heading-1').innerHTML+='<br><h5>try catch block execution done. I always run</h5>'
+   }
+  </script>
+ 
+</body>
+</html>

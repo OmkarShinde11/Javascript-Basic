@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function</title>
+  </head>
+  <body>
+    <p>Thanks for visit <br />I hope you are enjoying the service</p>
+    <p id="output"></p>
+
+    <!-- javascript code -->
+    <script>
+      function hello(name) {
+        let input = document.getElementById("output");
+        return (input.innerText = "Mr " + name);
+      }
+      // let a;
+      //  = hello("Omkar");
+      // document.write(`${(a = hello("Omkar"))}`);
+      // console.log((a = hello("naresh")));
+      hello('Omkar')
+    </script>
+  </body>
+</html>

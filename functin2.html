@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            min-height:100vh;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            background-color: purple;
+            min-height:5rem;
+            width:50%;
+            text-align: center;
+            margin:1rem;
+        }
+    </style>
+</head>
+<body>
+    <div>
+       <h1>Hiii Everyone.</h1>
+    </div>
+    <input type="text" id="input1" value="">
+    <button id="btnchange">done</button>
+
+<script>
+     let btn = document.getElementById('btnchange');
+     btn.addEventListener('click',function(){
+
+        let h1 = document.querySelector('div h1');
+    let input = document.querySelector('#input1').value;
+    console.log(h1);
+    let txt1 = h1.innerText;
+    console.log(txt1);
+     txt1 = txt1.split(' ');
+    console.log(txt1);
+    txt1[1] = input;
+    console.log(txt1);
+    txt1 = txt1.join(' ');
+    console.log(txt1);
+    h1.innerText= txt1;
+    
+
+    })
+    
+
+</script>
+</body>
+</html>

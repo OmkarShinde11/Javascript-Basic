@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom1.html</title>
+  <style>
+    .child{
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+     <p class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, pariatur quibusdam deleniti delectus ex commodi, officia vitae placeat dignissimos rerum magnam dolores qui rem iusto omnis repudiandae dolore temporibus! Quas consectetur at perspiciatis, perferendis asperiores reiciendis ea adipisci neque dolor omnis. Recusandae reprehenderit placeat maiores possimus delectus ducimus sit. Voluptas.</p>
+     <p class="child">HELLO Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, pariatur quibusdam deleniti delectus ex commodi, officia vitae placeat dignissimos rerum magnam dolores qui rem iusto omnis repudiandae dolore temporibus! Quas consectetur at perspiciatis, perferendis asperiores reiciendis ea adipisci neque dolor omnis. Recusandae reprehenderit placeat maiores possimus delectus ducimus sit. Voluptas.</p>
+  </div>
+ 
+  <script>
+    // child to parent
+    let a=document.querySelector('.child')
+    console.log(a)
+    console.log(a.parentNode)
+
+ 
+    // parent to child
+    let b=document.querySelector('.parent')
+    console.log(b)
+    console.log(b.childNodes)
+    // excepted output
+    // 0: text
+    // 1: p.child
+    // 2: text
+    // 3: p.child
+    // 4: text
+    console.log(b.childNodes[3].innerHTML='<b>Hello</b>')
+  </script>
+</body>
+</html>

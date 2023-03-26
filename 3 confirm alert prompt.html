@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm alert prompt</title>
+</head>
+<body onload="verify()">
+  
+</body>
+</html>
+<script>
+  // alert('Hello Good Morning')
+  // confirm('Do yoy love me?')
+  // prompt('Are you happy ?','say:yes or no')
+
+  // let a= prompt('Do you love me?')
+  // document.write(`<h1>${a}</h1>`)
+
+  // let msg='Do you love me?'
+  // let b=prompt(msg);
+  // document.write(`<h1>${msg}</h1><h2>${b}<h2>`);
+
+//  convert string to array
+//   let sent='My name is Omkar Shinde';
+//   let sent_arr=sent.split(" ")
+//   document.write(sent_arr,"<br>")
+
+//   let str1=sent_arr.join(" ")
+//  document.write(str1,"<br>")
+
+// convert array to string
+  // let arr1=['My','Name','is','omkar','shinde']
+  // let str2=arr1.join(" ")
+  // document.write(str2,"<br>")
+
+ let arr3=['My','Name','Is','Omkar','Shinde']
+ let str4=arr3.join("-");
+ let str5='https://www.' + str4
+ document.write(str5.toLocaleLowerCase(),"<br>");
+ 
+//  https://www.my-name-is-omkar-shinde convert this to array
+ 
+  let str_2= 'https://www.my-name-is-omkar-shinde';
+  let str_3=str_2.replace('https://www.',"");
+  let arr_1=str_3.split('-');
+  console.log(arr_1)
+  document.write(arr_1,"<br>")
+  
+
+
+
+// let str_1='My Name Is Omkar Shinde'
+// let result=str_1.replace('Om','Push')
+// document.write(result,"<br>")
+
+// let password='Omkar@123';
+// let check=prompt('type correct password');
+// let result_1=(check===password) ? 'Yes':'No';
+// document.write(result_1,"<br>")
+
+// function verify(check,password){
+//   check=prompt("Type Correct Password");
+//   password='Omkar@123';
+//   if(check===password){
+//     document.write('Yes')
+//   }
+//   else{
+//     prompt('Type Correct Password')
+//   }
+// }
+
+let name='My Name Is Omkar Shinde'
+let result_2=name.substring(0,5);
+document.write(result_2,"<br>");
+
+let animals=['ant','bison','camel','duck','elephent']
+var str_8=animals.slice(2,4);
+document.write(str_8,"<br>")
+str_8=animals.slice(0,-2);
+document.write(str_8,"<br>")
+
+</script>
+
+

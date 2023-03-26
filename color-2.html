@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color</title>
+</head>
+<style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  html{
+    font-size: 10px;
+  }
+  section{
+    width:100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    align-items: center;
+    justify-content: center;
+  }
+  label{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: cursive;
+  }
+  input{
+    padding:0.8rem 1rem;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid red;
+  }
+  button{
+    padding:0.8rem 1rem;
+    border-radius: 8px;
+    border:none;
+    background-color: blanchedalmond;
+    font-size: 1.4rem;
+  }
+</style>
+<body>
+  <section>
+    <label for='field'>Enter Color code</label>
+    <input type="text" id="field" placeholder='#000'> 
+    <button type="submit" id="btn-1">Click me</button>
+  </section>
+
+  <!-- javascript code -->
+<script>
+   
+
+
+
+
+
+
+  let a=document.getElementById('field');
+     let b=document.getElementById('btn-1');
+     let x=document.querySelector('body');
+     b.addEventListener('click',function(){
+        let c=a.value
+        x.style.backgroundColor=`${c}`
+        console.log(c)
+     })
+
+    // let a=document.querySelector('input');
+    // let b=document.getElementById('btn-1');
+    // let x=document.querySelector('body')
+    // b.addEventListener('click',function(){
+    //     let c= a.getAttribute('value');
+    //     console.log(c);
+    //     x.style.backgroundColor=`${c}`
+    // })
+</script>
+</body>
+</html>

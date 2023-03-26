@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add-to-cart</title>
+</head>
+<body>
+  <script>
+    let prd_data=[
+      {image:'images/Transperent-car.png',title:'Boat-watch',price:'5000'},
+      {image:'images/Transperent-car.png',title:'Boat-watch',price:'5000'},
+      {image:'images/Transperent-car.png',title:'Boat-watch',price:'5000'}
+    ]
+    let update_obj=JSON.stringify(prd_data)
+    localStorage.setItem('data',update_obj);
+    console.log(localStorage)
+  </script>
+</body>
+</html>

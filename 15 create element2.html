@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>createElement</title>
+</head>
+<style>
+  section{
+    width:100%;
+    height:20vh;
+    border:1px solid red;
+  }
+</style>
+<body>
+  <section>
+
+  </section>
+
+  <script>
+    let main=document.querySelector('section')
+    let a=document.createElement('h1')
+    a.innerText='Omkar'
+    let b=document.createElement('h2')
+    b.innerText='Omkar11'
+    main.insertAdjacentElement('beforebegin',b)
+    // main.insertAdjacentElement('afterend',a)
+    // main.insertAdjacentElement('afterbegin',a)
+    main.insertAdjacentElement('beforeend',a)
+  </script>
+</body>
+</html>

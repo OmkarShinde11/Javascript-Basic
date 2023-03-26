@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        div {
+            min-height: 16rem;
+            font-family: cursive;
+            text-align: center;
+            width: 40%;
+            border: 5px double purple;
+            background-color: #ffff00;
+            padding: 0.6rem;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+
+        input[type='text'] {
+            padding: 0.5rem;
+            border-radius: 0.8rem;
+            outline: none;
+            border: 3px double orchid;
+            /* margin-top:10px; */
+            width: 18rem;
+            color: brown;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 0.5rem;
+            border-radius: 0.8rem;
+            font-weight: bold;
+            background-color: rgba(255, 165, 0, 0.5);
+            border: none;
+        }
+
+        table {
+            width: 70%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 4px double purple;
+        }
+
+        th,
+        td {
+            padding: 0.7rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1>Enter your Name</h1>
+        <input type="text" id="input" placeholder="Type here...." value="">
+        <button id="result" type="submit">Submit</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2"> Your Marks: </th>
+                </tr>
+                <tr>
+                    <th> Maths </th>
+                    <th> English </th>
+                </tr>
+            </thead>
+            <tbody id="trow">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let btn = document.getElementById('result');
+        const users = {
+            naresh: { maths: '80', english: '60' },
+            mohit: { maths: '70', english: '65' }
+        };
+        btn.addEventListener('click', function () {
+ let input1 = document.getElementById('input').value;
+            input1 = input1.toLowerCase();
+            //  console.log(input1);
+ let tbody = document.getElementById('trow');
+
+ let tr = document.createElement('tr');
+
+ tr.innerHTML = `<td> ${users[input1].maths}</td>
+                 <td> ${users[input1].english} </td>`;
+ tbody.appendChild(tr);
+
+
+        }); 
+    </script>
+</body>
+
+</html>

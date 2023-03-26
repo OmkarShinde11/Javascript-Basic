@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .main{
+    width:100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:2rem;
+  }
+  .main-1{
+    width:20rem;
+    height:auto;
+    border:1px solid red;
+    padding:1rem
+    
+  }
+  button{
+    padding:0.5rem 1rem;
+    background-color: yellow;
+    border:none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+</style>
+<body>
+  <div class="main">
+    <div class="main-1">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem eum sunt libero. Doloremque ea cupiditate temporibus quisquam asperiores alias aliquam assumenda velit. Sequi beatae distinctio, repudiandae vel odio facilis natus.</p>
+    </div>
+    <button type="submit" onclick="change()" ondblclick="change1()" >Change bgcolor</button>
+  </div>
+
+  <!-- javascript code -->
+  <script>
+  function change(){
+   let a=document.querySelector('.main-1');
+   a.style.backgroundColor='purple';
+   a.style.color='white';
+   a.style.fontFamily='cursive';
+   a.style.borderRadius='1rem';
+   a.style.transition='all 0.4s'
+  }
+
+  function change1(){
+    let a=document.querySelector('.main-1');
+   a.style.backgroundColor='';
+   a.style.color='';
+   a.style.fontFamily='';
+   a.style.borderRadius='';
+   a.style.transition=''
+  }
+
+  
+
+
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="resultpage.html">
+        username: <input type="text" name="uname" id="input1">
+        lastname: <input type="text" name="lname" id="input2">
+        <button type="submit" id="btn1">Submit</button>
+        <button type="button" id="btn2">Save</button>
+        <!-- <button type="button" id="btn3">save2</button> -->
+    </form>
+    <div id="text">
+
+    </div>
+
+    <script>
+        let input1 = document.querySelector('#input1');
+        let input2 = document.querySelector('#input2');
+        // let btn1 = document.querySelector('#btn1');
+        let btn2 = document.querySelector('#btn2');
+        // let btn3 = document.querySelector('#btn3');
+        let div = document.querySelector('#text');
+
+        // input1.addEventListener('change',()=>{
+        //      let a = input1.value;
+        //      div.textContent = a;
+        // })
+        // input1.addEventListener('input',()=>{
+        //      let a = input1.value;
+        //      div.textContent = a;
+        // })
+        
+        // input1.addEventListener('input',(input)=>{
+        //      let a = input.target.value;
+        //      div.textContent = a;
+        // })
+      
+        // input1.addEventListener('input',input=>{
+    
+        //      div.textContent = input.target.value;
+        // })
+       
+        btn2.addEventListener('click',()=>{
+            //  let a = input1.value;
+            localStorage.setItem('username',input1.value);
+            localStorage.setItem('lastname',input2.value);
+        })
+
+        // console.log(localStorage.getItem('username'));
+        
+        
+
+    </script>
+</body>
+</html>

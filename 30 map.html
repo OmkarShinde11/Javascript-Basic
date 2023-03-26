@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const arr1=[1,2,3,4];
+    const result=arr1.map(double=(x)=>{
+       return x *10
+    })
+    console.log(result)
+
+    const arr2=[1,2,3,4];
+    const result_1=arr2.map(square=(a)=>{
+      return a**2
+    })
+    console.log(result_1)
+
+
+    const arr3=[1,2,3,4,5,6,7,8,9,10];
+    var result_2=arr3.map(binary=(b)=>{
+    return b.toString(2)
+    })
+    console.log(result_2);
+
+    const arr4=[5,8,9,7];
+    var arr5=arr4.map((x)=>{
+      return x;
+    });
+    console.log(arr5)
+
+    let newarr=arr4.map((value,index,array)=>{
+      // return value;
+      return index;
+      // return array[index];
+    })
+    console.log(newarr);
+  </script>
+</body>
+</html>

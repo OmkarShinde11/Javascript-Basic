@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object</title>
+</head>
+<body>
+  <script>
+    let a={
+      Fname:'Omkar',
+      Email:'Omkar@gmail.com',
+      Password:'Omkar@123',
+      City:['Mumbai','Pune','Bangalore'],
+      Welcome:function(){
+        return this.Email+" "+this.Password
+      }
+    };
+
+    console.log(a)
+    console.log(a.Fname)
+    console.log(a.City[1])
+    console.log(a.Welcome())
+
+    a.Email='sid45@gmail.com';
+    console.log(a)
+
+    // add a new key to object
+    a.Lname='Shinde';
+    console.log(a)
+
+    // delete the Lname
+    // delete a.Lname
+    // console.log(a)
+
+
+    a.sentence=function(){
+      return 'My name is '+this.Fname+" "+this.Lname+"."+"\n"+"I lived in"+" "+this.City[0]+"."+"\n"+"My email address is"+" "+this.Email+"."
+    }
+    console.log(a)
+    console.log(a.sentence())
+  </script>
+</body>
+</html>

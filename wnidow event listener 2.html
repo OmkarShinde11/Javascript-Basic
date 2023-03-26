@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window event listener 2</title>
+</head>
+<body>
+  <button type="submit" id="btn-1">Open new tab</button>
+  <button type="submit" id="btn-2">Close tab</button>
+
+
+  <script>
+   let a=document.getElementById('btn-1');
+   let b=document.getElementById('btn-2');
+  let x;
+   a.addEventListener('click',()=>{
+     x= window.open('37 Window Event.html',"","width=500px,height=500px,left=300px,top=100px")
+   })
+
+   b.addEventListener('click',()=>{
+    x.window.close()
+   })
+  </script>
+</body>
+</html>

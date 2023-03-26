@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>switch</title>
+  </head>
+  <body>
+    <script>
+      // let Value=prompt("Enter any Lanaguage","A.C B.c++,C.Java")
+      // switch(Value){
+      //   case 'A':
+      //     document.write('You Selected C');
+      //     break;
+
+      //   case 'B':
+      //     document.write('You selected c++');
+      //     break;
+
+      //   case 'C':
+      //     document.write('You selected java');
+      //     break;
+
+      //   default:
+      //     document.write("Invalid Options")
+      // }
+
+      // let age=Number(prompt("Enter your age to check eligiblity"))
+      // switch(true){
+      //   case(age>=18 && age<=30):
+      //   document.write("yes you can come for movie");
+      //   break;
+
+      //   case(age>=31 && age<=50):
+      //   document.write("yes you can come for movie with sunday");
+      //   break;
+
+      //   default:
+      //     document.write("Not Allowed")
+      // }
+
+      // let value = Number(
+      //   prompt("Enter any Language", "1.Java 2.Python 3.Javascript")
+      // );
+      // switch (value) {
+      //   case 1:
+      //     document.write("You selected Java");
+      //     break;
+
+      //   case 2:
+      //     document.write("You selected python");
+      //     break;
+
+      //   case 3:
+      //     document.write("you selected javascript");
+      //     break;
+
+      //   default:
+      //     document.write("No language selected");
+      // }
+
+      let date=new Date().getDay();
+      switch(date){
+        case 0:
+          console.log('Sunday');
+          break;
+
+        case 1:
+          console.log('Monday');
+          break;
+
+        case 2:
+          console.log('Tuesday');
+          break;
+
+        case 3:
+          console.log('Wenesday');
+          break;
+
+        case 4:
+          console.log('Thursday');
+          break;
+
+        case 5:
+          console.log('Friday');
+          break;
+        
+        case 6:
+          console.log('Saturaday');
+          break;
+        
+        default:
+          console.log('Looking for next weekend')
+      }
+
+      let x=1;
+      switch(x){
+        case 0:
+          console.log("Off");
+          break;
+        
+        case 1:
+          console.log("On");
+          break;
+        
+        default:
+          console.log('No such number');
+          break;
+      }
+
+      // Type Checking in switch Statement
+      let a=1;
+      switch(a){
+        case "1":
+          console.log('False')
+          break;
+        
+        case 1:
+          console.log("True");
+          break;
+
+      }
+
+      // program for simple calculator
+      // let num1=Number(prompt('Enter first number'));
+      // let operator=prompt('Enter first operator like(+,-,*,/)');
+      // let num2=Number(prompt('Enter seconde number'))
+      // switch(operator){
+      //   case '+':
+      //     result=num1+num2;
+      //     console.log(`${num1} + ${num2}=${result}`)
+      //     break;
+        
+      //   case '-':
+      //     result=num1-num2;
+      //     console.log(`${num1} - ${num2}=${result}`)
+      //     break;
+        
+      //   case '*':
+      //     result=num1 * num2;
+      //     console.log(`${num1} * ${num2}=${result}`)
+      //     break;
+        
+      //   case '/':
+      //     result=num1 / num2;
+      //     console.log(`${num1} / ${num2}=${result}`)
+      //     break;
+      // }
+
+      //  Using the JavaScript switch statement to get the day count based of a month
+
+      // let year='2016';
+      // let month=2;
+      // let daycount;
+      // switch(month){
+      //   case 1:
+      //   case 3:
+      //   case 5:
+      //   case 7:
+      //   case 8:
+      //   case 10:
+      //   case 12:
+      //     daycount=31
+      //     break;
+      //   case 4:
+      //   case 6:
+      //   case 8:
+      //   case 11:
+      //     daycount=30
+      //     break;
+      //   case 2:
+      //   if ((year % 4 == 0 && !(year % 100 == 0)) || year % 400 == 0) {
+      //       daycount = 29;
+      //   } else {
+      //       daycount = 28;
+      //   }
+      //   break;
+      //   default:
+      //     console.log('error')
+      // }
+      // console.log(daycount);
+
+
+      let player='Rohit';
+      switch(player){
+        case 'Rohit':
+        case 'Virat':
+        case 'Surya':
+        case 'Ishan':
+        case 'Sheryas':
+        case 'Jasprit':
+        case 'Bhuvaneshvar':
+        case 'Mohamad':
+          console.log(player," Playes Cricket");
+          break;
+        
+        case 'Ronaldo':
+        case 'Nemayer':
+        case 'Messy':
+          console.log(player," Playes Football");
+          break;
+        
+        default:
+          console.log("No such player");
+      }
+
+
+      let age=Number(prompt('Enter age'));
+      switch(true){
+        case(age>=5 && age<=7):
+        console.log('Children are allowed to join the Nursury');
+        break;
+        
+        case(age<5):
+        console.log('Children are not allowed to school');
+        break;
+
+        default:
+          console.log('Enter proper age')
+      }
+
+      
+      
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>If else</title>
+  </head>
+  <body onload="add()"></body>
+</html>
+<script>
+  // let a=prompt('Are you a boy or girl','type:Boy or Girl')
+  // a=a.toLowerCase()
+  // if(a==='boy'){
+  //   document.write('You are allowed here')
+  // }
+  // else{
+  //   document.write('You are not allowed here')
+  // }
+
+  // let b=prompt('Are you boy,girl or couple','type boy,girl,couple')
+  // b=b.toLowerCase();
+  // if(b==='boy'){
+  //   document.write('You are allowed here')
+  // }
+  // else if(b==='couple'){
+  //   document.write('You are allowed here')
+  // }
+  // else{
+  //   document.write('You are not allowed here')
+  // }
+
+  // check the number is positive ,negetive or neither positive nor negetive
+  // function display(){
+  //   let num=prompt("Enter any number to check whether it is positive/negetive number","-2,-1,0,1,2");
+  //   if(num>0){
+  //     document.write(num,'Number is positive')
+  //   }
+  //   else if(num<0){
+  //     document.write(num,'Number is negetive')
+  //   }
+  //   else{
+  //     document.write(num,'Number is neither positive nor negetive')
+  //   }
+  // }
+
+  function add() {
+    let a = prompt("Enter a number");
+    let b = prompt("Enter a number");
+    a = Number(a);
+    b = Number(b);
+    if (a>b) {
+      document.write("Subtraction is: ", a - b);
+    } else if (a<b) {
+      document.write("Addition is: ", a + b);
+      // console.log('Addition is: ',a+b);
+    } else {
+      document.write("Better Luck Next Time👍");
+      // console.log('Better Luck Next Time👍')
+    }
+  }
+</script>

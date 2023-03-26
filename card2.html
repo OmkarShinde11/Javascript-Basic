@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card2</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      font-size: 10px;
+    }
+    img {
+      width: 25rem;
+    }
+    .card {
+      border: 1px solid red;
+      width: 25rem;
+      height: 20rem;
+    }
+    #svg-1 {
+      width: 4rem;
+    }
+    #one {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      padding-bottom: 5rem;
+    }
+    #Product-table {
+      display: flex;
+      justify-content: center;
+      display: none;
+    }
+    table {
+      border-collapse: collapse;
+      width: 50%;
+    }
+    tr,
+    td,
+    th {
+      padding: 1rem;
+    }
+    .card-footer{
+      display: flex;
+      justify-content: space-around;
+    }
+  </style>
+  <body>
+    <section id="one">
+      <div class="card">
+        <div class="card-head">
+          <img src="images/Transperent-car.png" />
+        </div>
+        <div class="card-body">
+          <h1>MG Hector</h1>
+          <p>500000</p>
+        </div>
+        <div class="card-footer">
+          <button type="submit">Add-to-cart</button>
+          <input type="number" min="1" max="5" value="1" class="input-1"  />
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <img src="images/Transperent-car.png" />
+        </div>
+        <div class="card-body">
+          <h1>MG Hector</h1>
+          <p>500000</p>
+        </div>
+        <div class="card-footer">
+          <button type="submit">Add-to-cart</button>
+          <input type="number" min="1" max="5" value="1" class="input-1"  />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div id="Product-table">
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Product Title</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>SubTotal</th>
+            </tr>
+          </thead>
+          <tbody id="row">
+
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <script>
+      let Cart=['images/Transperent-car.png','Mg-Hector','500000'];
+      let button=document.querySelectorAll('button');
+      console.log(button)
+      for(var i=0;i<button.length;i++){
+        let btn=button[i]
+        // console.log(btn)
+        btn.addEventListener('click',function(){
+          total()
+        })
+      }
+      function total(){
+        let table_1=document.getElementById('Product-table');
+        table_1.style.display='flex';
+        let Cart=['images/Transperent-car.png','Mg-Hector','500000',];
+        let table=document.getElementById('row');
+        let b=document.querySelector('input');
+        console.log(b)
+        let c=b.value;
+        console.log(c);
+        let d=document.createElement('tr');
+        d.innerHTML=`<td><img src=${Cart[0]}></td>
+           <td>${Cart[1]}</td>
+           <td>${Cart[2]}</td>
+           <td>${c}</td>
+           <td>${c * Cart[2]}</td>`
+           table.appendChild(d)
+      }
+
+      let productQuantity=document.querySelectorAll('input')
+      console.log(productQuantity)
+      for(var i=0;i<productQuantity.length;i++){
+        let quantity=productQuantity[i];
+        quantity.addEventListener('change',function(){
+           let a=quantity.value;
+           console.log(a)
+      //     if(isNaN(a)||a<=0){
+      //       a=1
+      //     }  
+          total()
+        })
+      }
+      // let Cart=['images/Transperent-car.png','Mg-Hector','500000',];
+      // let button=document.querySelectorAll('button');
+      // for(item of button){
+      //     item.addEventListener('click',total=()=>{
+      //     let table_1=document.getElementById('Product-table');
+      //     table_1.style.display='flex';
+      //     let b=document.getElementById('input-1');
+      //     let c=b.value;
+      //     console.log(c);
+      //     let table=document.getElementById('row');
+      //     let d=document.createElement('tr');
+      //     d.innerHTML=`<td><img src=${Cart[0]}></td>
+      //     <td>${Cart[1]}</td>
+      //     <td>${Cart[2]}</td>
+      //     <td>${c}</td>
+      //     <td>${c * Cart[2]}</td>`
+      //     table.appendChild(d)
+      //   })
+      // }
+
+      // let a=document.querySelectorAll('input');
+      // for(var i=0;i<a.length;a++){
+      //   let inputs=a[i];
+      //   inputs.addEventListener('change',()=>{
+      //     let val=inputs.value;
+      //     if(isNaN(a)||val<=0){
+      //       val=1
+      //     }
+      //     total()
+      //   })
+      // }
+      
+      // let input=document.querySelectorAll('input');
+      // for(conetnt of input){
+      //    conetnt.addEventListener('click',ready)
+      // }
+
+      // function ready(){
+      //   let a=conetnt.value
+      //   console.log(a)
+      // }
+
+        //   let b=document.getElementById('input-1');
+        //   let c=b.value;
+        //   console.log(c);
+
+      
+     
+    </script>
+  </body>
+</html>

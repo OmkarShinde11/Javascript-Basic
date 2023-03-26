@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie</title>
+</head>
+<body>
+  Fname<input type="text" id="field"><br>
+  Lname<input type="text" id="field-1"><br>
+  <button type="submit" id="btn">Save</button>
+  <button type="submit" id="btn-1">Click</button>
+  <p></p>
+  <script>
+    let Fname=document.getElementById('field');
+    let Lname=document.getElementById('field-1');
+    let btn=document.getElementById('btn');
+    btn.addEventListener('click',()=>{
+       document.cookie='firstName='+ Fname.value
+       document.cookie='lastName='+Lname.value
+    })
+
+    let field=document.querySelector('p')
+    let btn_1=document.getElementById('btn-1');
+    btn_1.addEventListener('click',()=>{
+      let decode=decodeURIComponent(document.cookie)
+      console.log(decode);
+      let update=decode.split(';')
+      // console.log(update);
+      field.innerText=update[1]
+    });
+
+    
+    
+    
+    
+    
+    
+    
+    
+    // function getcookie(firstName){
+      
+    //    let name= firstName + '=';
+    //    console.log(name)
+    //    let decode=decodeURIComponent(document.cookie)
+    //    console.log(decode)
+    //    let ca=decode.split(';')
+    //    console.log(ca)
+    //    for(let i=0;i<ca.length;i++){
+    //     let c=ca[i]
+    //     console.log(c)
+    //     while (c.charAt(0) == ' ') {
+    //       // console.log(c)
+    //       c = c.substring(1);
+    //     }
+        
+    //     if(c.indexOf(name)==0){
+    //       return c.substring(name.length,c.length)
+    //     }
+    //    }
+    //    return ""
+    // }
+      
+   
+  </script>
+</body>
+</html>

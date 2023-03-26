@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loop</title>
+  </head>
+  <style>
+    div{
+      border:1px solid red;
+      background-color: yellow;
+      color:red;
+      font-family: cursive;
+      font-weight: bold;
+      font-size:1.4rem;
+    }
+  </style>
+  <body>
+    <h1>For loop</h1>
+    <section>
+
+    </section>
+
+    <!-- javascript code -->
+    <script>
+      // for (var i = 0; i <= 10; i++) {
+      //   console.log("Number is: ", i);
+      // }
+
+      // for (var i = 10; i >= 0; i--) {
+      //   console.log("Value is: ", i);
+      // }
+
+    //   for (var i = 1; i <= 10; i++) {
+    //     let j = 2;
+    //     document.write(` 2 X ${i} = `, j * i,"<br>");
+    //   }
+
+    //  for (var a=10; a>=1; a--){
+    //   let b=3;
+    //  console.log(`3 X ${a}=`,b * a,)
+    //  document.write(b,'X',a,"=",b * a,"<br>")
+    //  }
+
+
+    //  for (var i=1;i<=3;i++){
+    //   let a=prompt('Enter Firstname');
+    //   let b=prompt('Enter Lastname');
+    //   console.log('Hello ',a,b)
+    //  }
+
+    let arr_1=['Omkar','Siddhesh','Mayur','Kapil','Shubham','Rahul'];
+    for (var i=0;i<arr_1.length;i++){
+      console.log(arr_1[i])
+    }
+    
+  //  for (var i=1;i<=1;i++){
+  //   let a=prompt('Enter Firstname')
+  //   let b=prompt('Enter Lastname')
+  //   let c=document.querySelector('section')
+  //   let d=document.createElement('div')
+  //   d.innerHTML=`<h1>${a}</h1><h1>${b}</h1>`;
+  //   c.appendChild(d);
+  //  }
+    
+    // for(var i=0;i<arr_1.length;i++){
+    //   let X=console.log(arr_1[i])
+    //   b.innerText=arr_1;
+    //   a.appendChild(b);
+
+    // }
+
+    // Write a JS code to print a 2D array
+    function printarray(arr){
+      for(var i=0;i<arr.length;i++){
+        for(j=0;j<arr[0].length;j++){
+          console.log(arr[i][j])
+        }
+      }
+    }
+    arr=[[1,2],
+      [3,4],
+      [5,6],
+    ];
+    console.log(printarray(arr))
+
+    // Write a JS code to print Even numbers in given array
+
+    function array(arr){
+      for(var i=0;i<arr.length;i++){
+        if(i%2==0){
+          console.log(arr[i])
+        }
+      }
+    }
+    arr=[50,36,89,74,56,54,12,0,1]
+    array(arr)
+
+    // Write a JS code to delete all occurrence of element in given array
+    arr_1=[56,89,87,56,20,56]
+    function occurence(arr_1,ele){
+      for(var i=0;i<arr_1.length;i++){
+       if(arr_1[i]==ele){
+        arr_1.splice(i,1)
+       
+       }
+    
+      }
+      return arr_1
+    }
+    arr=occurence(arr_1,56);
+    console.log(arr_1)
+
+
+    // Write a JS code to find the power of a number using for loop
+    function power(num,pow){
+      let res=1;
+      for(var i=0;i<pow;i++){
+        res=res*num;
+      }
+      return res;
+    }
+    console.log(power(2,5))
+  
+
+  //  function avg(nums){
+  //   for(var i=0;i<nums.length;i++){
+  //     var sum=(nums[i])
+  //     console.log(sum);
+  //     var total=nums[0]+nums[1]+nums[2]+nums[3];
+  //     console.log(total)
+  //     return total/nums.length
+  //   }
+  //  }
+  //  console.log(avg([10,20,30,40]))
+
+  function avg(nums){
+    var total=0;
+    for(var i=0;i<=nums.length;i++){
+      total=total+nums[i];
+    }
+    return total/nums.length
+  }
+
+  console.log(avg([10,20,30,40]))
+
+
+  
+
+    </script>
+  </body>
+</html>

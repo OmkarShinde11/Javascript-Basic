@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <section>
+      <form action="#" onsubmit="alert('Form Submit Sucessfully')">
+        Firstname:<input type="text" id="input-1" /> Lastname:<input
+          type="text"
+          id="input-2"
+        />
+        City:<input type="text" id="input-3" /> Address:<textarea
+          id="addr-1"
+        ></textarea>
+        Confirm address:<textarea cols="20" rows="8" id="addr-2"></textarea
+        ><br />
+        City:<select name="city" id="input-4">
+          <option>Mumbai</option>
+          <option>Pune</option>
+          <option>Delhi</option>
+        </select>
+        <input type="submit" value="submit">
+      </form>
+
+      <div id="tracker">
+
+      </div>
+    </section>
+
+    <script>
+      let input = document.getElementById("input-1");
+      input.addEventListener("focus", () => {
+        input.style.boxShadow = "0.2rem 0.1rem 1rem 0.5rem red";
+      });
+      input.addEventListener("blur", () => {
+        input.style.boxShadow = "";
+      });
+
+      let input_4 = document.getElementById("input-4");
+      input_4.addEventListener("focus", () => {
+        input_4.style.boxShadow = "0.2rem 0.1rem 1rem 0.5rem red";
+      });
+
+      input_4.addEventListener("blur", () => {
+        input_4.style.boxShadow = "";
+      });
+
+      let add1 = document.getElementById("addr-1");
+      let add2 = document.getElementById("addr-2");
+      add1.addEventListener("input", () => {
+        let a = add1.value;
+        add2.innerText = a;
+      });
+
+      let input2 = document.getElementById("input-2");
+      input2.addEventListener("select", () => {
+        input2.style.backgroundColor='yellow'
+        input2.style.color = "red";
+      });
+
+      let trackerdiv=document.getElementById('tracker');
+      trackerdiv.style.borderLeft='10px solid red';
+      trackerdiv.style.minHeight='10rem'
+      trackerdiv.style.marginTop='3rem'
+      
+      input.addEventListener('change',()=>{
+        let a=input.value;
+        trackerdiv.innerHTML+=`<h1>${a}</h1>`
+      })
+
+      input2.addEventListener('change',()=>{
+        let b=input2.value
+        trackerdiv.innerHTML+=`<h1>${b}</h1>`
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create element</title>
+  </head>
+  <style>
+    #new{
+      border:1px solid red;
+      width:5rem;
+      height:5rem;
+      border-radius: 5px;
+      background-color: yellow;
+    }
+  </style>
+  <body>
+    <section></section>
+
+    <!-- javascript code -->
+    <script>
+      let a = document.querySelector("section");
+      let b = document.createElement("div");
+      b.innerHTML = "<h1>Omkar Shinde</h1>";
+      b.setAttribute('id','new')
+      a.appendChild(b);
+
+      let c = document.createElement("img");
+      c.setAttribute("src", "Images/background.jpg");
+      c.setAttribute("title", "background");
+      b.appendChild(c);
+    </script>
+  </body>
+</html>

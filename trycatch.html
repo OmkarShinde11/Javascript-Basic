@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <div id="Message"></div>
+
+    <script type="text/javascript">
+         let user = prompt('Enter you username to login.');
+          user = user.toLowerCase();
+        try{
+         if (user !== 'naresh') {
+             throw "unknown_user";
+         }
+         else {
+             alert ("welcome Naresh you are allowed to stay here.")
+             document.getElementById('Message').innerHTML = "Welcome " + user + ", It's nice to see you around.<br>";
+         }
+        }
+             
+        catch(error){
+            if (error == "unknown_user"){
+              document.getElementById('Message').innerHTML = "Sorry " + user + " you have to login in order to stay here.<br>";
+                //  console.log("Sorry " + user + " you have to login in order to stay here.");
+             
+            }
+            console.log(error,error.message,'user '+user);
+        }
+
+        finally{
+            var display = document.querySelector('#Message');
+            display.innerHTML += " Exception handlng is done using try,catch and finally. (I will always run 😊)";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom</title>
+</head>
+<body>
+  <div id="main">
+    <h2 class="heading-1">Omkar Shinde</h2>
+    <h2 class="heading-1">Siddhesh Shinde</h2>
+    <p class="content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione blanditiis explicabo exercitationem similique aliquam sequi facilis, minima fugit error laudantium facere magnam dolore, officiis sint iusto nemo dignissimos accusamus eligendi!</p>
+    <h2 class="heading-1">Mayur Shinde</h2>
+    <p class="content">HELLO Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident voluptates debitis ipsam dolor consectetur impedit dolore soluta dignissimos, pariatur inventore quidem quo repellat earum consequatur eum beatae mollitia libero architecto?</p>
+  </div>
+
+  <!-- javascript code -->
+  <script>
+    let a=document.getElementById('main');
+    console.log(a)
+
+    a=document.getElementsByClassName('heading-1')
+    console.log(a)
+
+    a=document.getElementsByClassName('heading-1')[1]
+    console.log(a)
+
+    a=document.getElementsByClassName('content')
+    console.log(a)
+
+    a=document.getElementsByClassName('content')[1]
+    console.log(a)
+    
+    a=document.getElementsByTagName('h2')
+    console.log(a)
+
+    a=document.getElementsByTagName('h2')[2]
+    console.log(a)
+
+    a=document.querySelector('h2')
+    console.log(a)
+
+    a=document.querySelector('#main>.heading-1:nth-child(3)')
+    console.log(a)
+
+    a=document.querySelectorAll('.content')
+    console.log(a)
+
+    a=document.querySelectorAll('.content')[1]
+    console.log(a)
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function</title>
+</head>
+<body>
+  <a href="https://www.google.com" target="_blank" id="anchor">Google</a>
+  <button type="submit" id="btn-1" onclick="modify()">Changed link</button>
+
+  <!-- Javascript code -->
+  <script>
+    function modify(){
+     let a=document.getElementById('anchor');
+     if(a.innerText=='youtube'){
+      a.innerText='Google';
+      a.href='https://www.google.com';
+     }
+     else{
+      a.innerText='youtube';
+      a.href='https://www.youtube.com';
+     }
+    }
+  </script>
+</body>
+</html>

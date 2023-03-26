@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5];
+      const result = arr.filter((odd = (x) => {
+          return x % 2 !== 0;
+        })
+      );
+      console.log(result);
+
+      const arr_1=[-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5];
+      const result_1=arr_1.filter((even=(a)=>{
+         return a %2==0;
+      })
+      );
+      console.log(result_1)
+
+      const arr_2=[-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+      const result_2=arr_2.filter((range=(i)=>{
+            if(i>=-3 && i<=3){
+              return i
+            }
+      })
+      );
+      console.log(result_2)
+    </script>
+  </body>
+</html>

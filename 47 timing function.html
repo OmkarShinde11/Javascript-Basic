@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+    }
+    html{
+      font-size: 10px;
+    }
+    main{
+      width:100%;
+      height:100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap:10rem
+    }
+    main>span{
+      font-size:2rem;
+      font-weight: bold;
+    }
+    button{
+      padding:0.8rem;
+      border-radius: 12px;
+      border: none;
+      font-size: 1.8rem;
+      font-style: italic;
+      cursor: pointer;
+    }
+    div{
+      width:5rem;
+      height:5rem;
+      border:2px solid red;
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: bolder;
+      font-family: cursive;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <span>Your timing start now</span>
+    <div>
+
+    </div>
+    <button type="submit">Stop</button>
+    <button type="submit" id="start">Start</button>
+  </main>
+  
+  <script>
+      // let timer=setInterval(()=>{
+      //   console.log('wake up')
+      // },3000)
+
+      // clearInterval(timer)
+
+      let x=0;
+      let starter=setInterval(()=>{
+        x=x+1;
+        let div=document.querySelector('div');
+        div.innerHTML=x;
+      },1000)
+
+      let change=()=>{
+        clearInterval(starter)
+      }
+      // let change_1=()=>{
+      //   clearInterval(starter_1)
+      // }
+
+      
+      let btn=document.querySelector('button');
+      btn.addEventListener('click',change);
+      // btn.addEventListener('contextmenu',change_1)
+      
+      let starter_1;
+      let start_1=document.getElementById('start');
+      start_1.addEventListener('click',()=>{
+         starter_1=setInterval(()=>{
+          x=x+1;
+          let div=document.querySelector('div');
+          div.innerHTML=x
+        },1000)
+        
+        
+        
+      })
+
+      btn.addEventListener('dblclick',()=>{
+        clearInterval(starter_1)
+      })
+  </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function1</title>
+  </head>
+  <body>
+    <!-- <h1 id="text">Hii Everyone</h1>
+  <input type="text" id="info">
+  <button type="submit" id="btn-1">Click</button> -->
+
+    <div>
+      <h1 id="heading">
+        Hii Introduce my friends This is Rahul This is Sairaj
+      </h1>
+      <input type="text" id="text-1" /><br /><br />
+      <!-- <input type="text" id="text-2"><br><br> -->
+      <button type="submit" id="btn-1">Click</button>
+    </div>
+
+    <script>
+      // let a=document.getElementById('info');
+      // let b=document.getElementById('btn-1');
+      // let head=document.getElementById('text');
+      // let name='Hii Everyone'
+      // b.addEventListener('click',function(){
+      //   let c=a.value;
+      //   name.replace('Everyone',c)
+      //   console.log(name)
+      //   head.innerText='Hii '+c;
+
+      // })
+
+      // let b=document.getElementById('btn-1');
+      // b.addEventListener('click',function(){
+      //   let input=document.getElementById('text-1').value;
+      //   let input1=document.getElementById('text-2').value;
+      //   let a=document.getElementById('heading');
+      //   let c=a.innerText;
+      //   console.log(c);
+      //   c=c.split(" ");
+      //   console.log(c);
+      //   c[6]=input;
+      //   c[9]=input1;
+      //   c=c.join(" ");
+      //   console.log(c);
+      //   a.innerText=c;
+      // })
+
+      let b = document.getElementById("btn-1");
+      b.addEventListener("click", function () {
+        let a = document.getElementById("text-1").value;
+        a = a.split(",");
+        let input = document.getElementById("heading");
+        let c = input.innerText;
+        console.log(c);
+        c = c.split(" ");
+        console.log(c);
+        c[6] = a[0];
+        c[9] = a[1];
+        console.log(c);
+        c = c.join(" ");
+        console.log(c);
+        input.innerText = c;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>function</title>
+</head>
+<body>
+  <input type="text" id="name" value="hii everyone">
+  <button type="submit" id="btn-1" onclick="change()">Click</button>
+  <div id="result"></div>
+
+
+  <script>
+    // let a=document.getElementById('name');
+    // let b=document.getElementById('btn-1');
+    // let c=document.getElementById('result');
+
+    // b.addEventListener('click',function(){
+    //   let name=a.value
+    //   c.innerHTML=`<h1>${name}</h1>`;
+    // })
+
+    function change(){
+      let a=document.getElementById('name').value;
+      let b=document.getElementById('btn-1');
+      let c=document.getElementById('result');
+      let p=document.createElement('p');
+      p.innerHTML=`<h1>${a}</h1>`;
+      c.appendChild(p);
+    }
+  </script>
+</body>
+</html>

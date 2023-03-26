@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ImageTable</title>
+</head>
+<style>
+  table{
+    border-collapse: collapse;
+  }
+</style>
+<body>
+  <!-- <img src="images/Transperent-car.png" -->
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Heading</th>
+      </tr>
+    </thead>
+    <tbody id="row">
+    
+    </tbody>
+  </table>
+
+  <button type="submit" id="btn-1">Click</button>
+
+   <script>
+    let a=['images/Transperent-car.png','images/Transperent-car.png'];
+    console.log(a)
+    let b=document.getElementById('btn-1');
+    let c=document.getElementById('row')
+    b.addEventListener('click',()=>{
+      let d=document.createElement('tr');
+      d.innerHTML=`<td><img src=${a[0]}></td>
+      <td><h1>${a[1]}</h1></td>`
+      c.appendChild(d)
+     
+     
+    }) 
+  </script>
+</body>
+</html>

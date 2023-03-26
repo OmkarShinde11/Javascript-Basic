@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let a={
+      Fname:'Omkar',
+      Email:'Omkar@gmail.com',
+      Password:'Omkar@123',
+      City:['Mumbai','Pune','Bangalore'],
+      Welcome:function(){
+        return this.Email+" "+this.Password
+      }
+    };
+    console.log(a.Welcome())
+
+    // to see all the keys of objet
+    for(let key in a){
+      console.log(key)
+    }
+
+    // to print all key value pairs
+    for(let key in a){
+      console.log(key+" "+":"+a[key])
+    }
+
+    let students={
+      Omkar:{Name:'Omkar Shinde'
+    }
+    }
+    console.log(students.Omkar.Name)
+
+    let object1={
+      day:'Good Morning',
+      night:'Good Night',
+      Name:['Omkar','Siddehsh','Mayur'],
+      message:function(){
+         return this.Name.forEach((students)=>{
+          console.log( this.day+","+students+" "+"how much you gonna rate me on a scale of 1 to 10 😊")
+          // return  this.day+","+students+" "+"how much you gonna rate me on a scale of 1 to 10 😊"
+        })
+      }
+    }
+    console.log(object1.message())
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array</title>
+</head>
+<body>
+  <script>
+    let arr_1=['Omkar'];
+    let arr_2=['Sai'];
+    let arr_3=['Kartik'];
+
+    let newArray=arr_1.concat(arr_2,arr_3);
+    console.log(newArray)
+
+    // spread operator
+    let new_array=[...arr_1,...arr_2,...arr_3];
+    console.log(new_array)
+
+    // index array
+    let fruits=[];
+    console.log(fruits);
+    fruits[0]='Mango';
+    fruits[1]='Apple';
+    fruits[2]='Pineapple';
+    fruits[3]='orange';
+    console.log(fruits);
+
+// multidimension array
+    let students=[
+      ['Omkar','Sid','Mayur'],
+      ['Sai','Kartik','Naresh']
+    ]
+    console.log(students);
+    console.log(students[0][1])
+    console.log(students[1][1])
+
+
+    // forEach
+    let arr_4=['omkar','Siddhesh','Rahul'];
+    arr_4.forEach((x)=>{
+      console.log(x);
+    })
+
+    arr_4.reverse().forEach((x)=>{
+      console.log(x)
+    })
+
+    let arr_5=[5,8,9,7,4]
+    document.write(arr_5.sort());
+
+   
+  </script>
+</body>
+</html>

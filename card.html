@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card</title>
+</head>
+<body>
+  <h1 class="heading-1">Omkar</h1>
+  <h1 class="heading-1">Siddhesh</h1>
+  
+  <script>
+    let a=document.getElementsByClassName('heading-1')
+    console.log(a)
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      font-size: 10px;
+    }
+    img {
+      width: 25rem;
+    }
+    .card {
+      border: 1px solid red;
+      width: 25rem;
+      height: 20rem;
+    }
+    #svg-1 {
+      width: 4rem;
+    }
+    #one {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      padding-bottom: 5rem;
+    }
+    #Product-table {
+      display: flex;
+      justify-content: center;
+      display: none;
+    }
+    table {
+      border-collapse: collapse;
+      width: 50%;
+    }
+    tr,
+    td,
+    th {
+      padding: 1rem;
+    }
+  </style>
+  <body>
+    <section id="one">
+      <div class="card">
+        <div class="card-head">
+          <img src="images/Transperent-car.png" />
+        </div>
+        <div class="card-body">
+          <h1>MG Hector</h1>
+          <p>500000</p>
+        </div>
+        <div class="card-footer">
+          <button type="submit">Add-to-cart</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <img src="images/Transperent-car.png" />
+        </div>
+        <div class="card-body">
+          <h1>MG Hector</h1>
+          <p>500000</p>
+        </div>
+        <div class="card-footer">
+          <button type="submit">Add-to-cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div id="Product-table">
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Product Title</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>SubTotal</th>
+            </tr>
+          </thead>
+          <tbody id="row"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <script>
+      let a = document.querySelectorAll("button");
+      let images = {
+        src: "images/Transperent-car.png",
+        title: "Mg-Hector",
+        price: "500000",
+        quantity: "5",
+      };
+      // function Product(image,title,price,quantity){
+      //    this.image=image,
+      //    this.title=title,
+      //    this.price=price,
+      //    this.quantity=quantity
+      // }
+
+      // const prd1=new Product('images/Transperent-car.png','Mg-hector','500000','2')
+      // console.log(prd1);
+      console.log(images);
+      for (item of a) {
+        item.addEventListener("click", () => {
+          let field = document.querySelector("input");
+          field.setAttribute("id", "input-1");
+          var special = document.getElementById("input-1").value;
+          let b = document.getElementById("Product-table");
+          b.style.display = "flex";
+          // let special=document.getElementById('input-1').value
+          let c = document.getElementById("row");
+          let d = document.createElement("tr");
+          d.innerHTML = `<td><img src=${images.src}></td>
+        <td><h1>${images.title}</h1></td>
+        <td><h1>${images.price}</h1></td>
+        <td><input type='number' value='1' min='1' max='5'></td>
+        <td><h1>${images.price *special.value}</h1></td>`;
+          c.appendChild(d);
+          
+          
+        });
+      }
+    </script>
+  </body>
+</html> -->

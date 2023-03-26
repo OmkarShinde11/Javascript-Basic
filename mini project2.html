@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Project</title>
+</head>
+<style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  html{
+    font-size: 10px;
+  }
+  section{
+    width:100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #emoji-1,#emoji-2{
+    font-size: 10rem;
+    cursor: pointer;
+  }
+  #emoji-2{
+    display: none;
+  }
+  
+  
+  
+</style>
+<body>
+  <section>
+    <div  id="emoji-1" >🙈</div>
+    <div  id="emoji-2" class="close">🙉</div>
+  </section>
+
+  <!-- javascript code -->
+  <script>
+    let a=document.getElementById('emoji-1');
+    let b=document.getElementById('emoji-2');
+    a.addEventListener('click',function(){
+      a.style.display='none'
+      b.style.display='block'
+    })
+    b.addEventListener('click',function(){
+      a.style.display='block'
+      b.style.display='none'
+    })
+  </script>
+</body>
+</html>

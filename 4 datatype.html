@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  document.write('<h1>My first js code</h1>')
+  // js data type divided into two data type primitive and reference datatype
+  // primitive data type contain boolean and number
+  // reference data type contain array string null object
+
+  let num1=21;
+  let num2=58;
+  document.write('the sum of num1 and num2: ',num1 + num2,"<hr>");
+  console.log(num1+num2)
+
+  let str1='good Morning';
+  let str2='Everyone';
+  document.write(str1,' ',str2,"<br>");
+  console.log(str1+' '+str2);
+
+  // object datatype
+  let scored={
+    omkar:78.95,
+    sai:56.27,
+    kartik:25.98,
+  };
+  console.log(scored);
+  document.write(scored.omkar,"<br>");
+ 
+//  array datatype
+  let name=[
+    1,
+    'Omkar',
+    null,
+    true,
+    'Raghav',
+  ];
+  document.write(name,'<br>')
+  console.log(name)
+  console.log(name[4])
+  document.write(name[3],"<br>")
+
+  // boolean datatype
+  var val1=true;
+  var val2=false;
+   console.log(val1,val2)
+   document.write(val1," ",val2,"<br>")
+
+  //  undefined data type
+  var om;
+  console.log(om)
+  var omkar=undefined;
+  console.log(omkar)
+  document.write(`print ${omkar} value `)
+
+  const str=85;
+  console.log(str)
+
+  // str='omkar';
+  // console.log(str)
+
+  const fruits ={
+    f1:'apple'
+  }
+  console.log(fruits.f1)
+  fruits.f1='mango'
+  console.log(fruits.f1)
+</script>

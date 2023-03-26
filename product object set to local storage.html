@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h1></h1>
+  <script>
+    let product={
+      name:'Boat-Watch',
+      price:'5000',
+    }
+    let obj=JSON.stringify(product)
+    localStorage.setItem('my_obj',obj)
+    // localStorage.removeItem('my_obj')
+    let obj_update=JSON.parse(localStorage.getItem('my_obj'));
+    console.log(obj_update)
+    
+
+    // var new_obj=JSON.parse(obj);
+    // console.log(new_obj)
+
+    let prd_data=[
+      {image:'images/Transperent-car.png',title:'Boat-watch',price:'5000'},
+      {image:'images/Transperent-car.png',title:'Boat-watch',price:'5000'},
+      {image:'images/Transperent-car.png',title:'Boat-watch',price:'5000'}
+    ]
+    let update_obj=JSON.stringify(prd_data)
+    localStorage.setItem('data',update_obj);
+    // localStorage.removeItem('data')
+
+    var cart=JSON.parse(localStorage.getItem('data'))
+    console.log(cart)
+  </script>
+</body>
+</html>

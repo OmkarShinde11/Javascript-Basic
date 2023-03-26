@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  table{
+    border: 1px solid red;
+    border-collapse: separate;
+  }
+  tr{
+    border: 2px solid yellow;
+  }
+</style>
+<body>
+  <section>
+    <table border="1">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>  
+      </tr>
+      <tbody>
+        <tr id="one">
+          
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- javascript code -->
+  <script>
+    
+
+    for (var i=1;i<=1;i++){
+      let Fname=prompt('Enter first name')
+      let Lname=prompt('Enter last name')
+      let a=document.getElementById('one');
+      let b=document.createElement('td');
+      b.innerText=Fname;
+      a.appendChild(b)
+      let c=document.createElement('td')
+      c.innerText=Lname 
+      a.appendChild(c)
+      
+    }
+    
+  </script>
+
+</body>
+</html>

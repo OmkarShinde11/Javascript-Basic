@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      font-size: 10px;
+    }
+    section {
+      width: 100%;
+      height: 100vh;
+      background-image: linear-gradient(
+          rgba(132, 125, 125, 0.456),
+          rgba(132, 125, 125, 0.456)
+        ),
+        url("Images/background.jpg");
+    }
+    .main {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .result {
+      width: 35rem;
+      height: 40rem;
+      border: 1px solid red;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      /* background-color: blue; */
+    }
+    .result > input {
+      width: 70%;
+      padding: 0.8rem 2rem;
+      border-radius: 5px;
+      border: 1px solid blue;
+      outline: none;
+      background: transparent;
+      color: red;
+    }
+    .result > button {
+      width: 50%;
+      padding: 0.8rem 2rem;
+      background: transparent;
+      border: 1px solid blue;
+      border-radius: 5px;
+      color: red;
+    }
+    #result-1 {
+      font-size: 2rem;
+      color: RED;
+    }
+    hr {
+      width: 100%;
+    }
+  </style>
+  <body>
+    <section>
+      <div class="main">
+        <div class="result">
+          <input
+            type="text"
+            id="text1"
+            placeholder="enter student name"
+            autocomplete="off"
+          />
+          <button type="submit" id="btn-1">Click me</button>
+          <p id="result-1"></p>
+        </div>
+      </div> 
+    </section>
+
+    <!-- javascript code -->
+    <script>
+      
+
+     
+      let b = document.getElementById("btn-1");
+      
+      b.addEventListener("click", function () {
+        var students = {
+        omkar: ["Html: 98", "Css: 96", "Javascript: 89"],
+        siddhesh: ["Html: 90", "Css: 90", "Javascript: 80"],
+        mayur: ["Html: 81", "Css: 82", "Javascript: 87"],
+      };
+      let a = document.getElementById("text1").value;
+      let input = a.toLowerCase();
+      let define = students[input];
+      let c = document.getElementById("result-1");
+        if (define == undefined) {
+          c.innerHTML = `There is no such result`;
+        }
+        else{
+          c.innerHTML = `<hr>The Html score is:${define[0]}<hr>The Css score is:${define[1]}<hr>The Javascript score is:${define[2]}`;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>While Loop</title>
+  </head>
+  <body>
+    <script>
+      // let count=1;
+      // while(count<=10){
+      //   console.log(count);
+      //   count++
+      // }
+      // document.write('Count at the time of terminating the loop is:',count)
+
+      // let count=20;
+      // do{
+      //   document.write(count,'<br>');
+      //   count++;
+      // }while(count<=30)
+      // document.write('count1 at the time of terminating loop is: ',count)
+
+      // let a=1;
+      // while(a<=10){
+      //   let b=2;
+      //   document.write('Multiplication of ',b,'X',a,": ",b *a ,"<br>");
+      //   a++;
+      // }
+
+      // let num1=1;
+      // do{
+      //   let num2=2;
+      //   document.write('Multiplication of',num2,'X',num1,': ',num1 * num2,"<br>")
+      //   num1++;
+      // }while(num1<=10)
+
+      // sum of positive number only
+      // let sum=0;
+      // number=Number(prompt("Enter a number"));
+      // while(number>=0){
+      //   sum+=number;
+      //   console.log(sum)
+      //   number=Number(prompt("Enter a number"))
+      // }
+
+      // display number 1 to 5 using do while loop
+      // let a=1;
+      // do{
+      //   console.log(a);
+      //   a++;
+      // }while(a<=5)
+
+      // sum of positive number only
+      // let sum=0;
+      // let number=0;
+      // do{
+      //   sum+=number;
+      //   console.log(sum);
+      //   number=Number(prompt("Enter any number"))
+      // }while(number>=0)
+
+      // Write a JS code to find the no of digits in a number
+      // function digitCount(num) {
+      //   var count = 0; //return 1 for pow=0
+      //   while (num != 0) {
+      //     num = Math.floor(num / 10);
+      //     count++;
+      //   }
+      //   return count;
+      // }
+      // console.log(digitCount(8367)); //4
+      // console.log(digitCount(563349)); //6
+
+      // Write a JS code to calculate the sum of digits in a number
+      // function sumDigit(num,sum){
+      //   // debugger;
+      //   sum=0;
+      //   while(num!=0){
+      //     rem=num % 10;
+      //     console.log(rem)
+      //     sum=sum+rem;
+      //     num=Math.floor(num/10);
+      //   }
+      //   return sum
+      // }
+      // console.log(sumDigit(1234))
+
+      let a1=[2,3,4,5];
+      let a2=[5,4,7,8];
+      function multiply(arr1,arr2){
+        
+        var arr3=arr1.length>=arr2.length ? arr1 : arr2;
+        console.log(arr3)
+        
+        for(var i=0;i<Math.min(arr1.length,arr2.length);i++){
+            arr3[i]=arr1[i] * arr2[i];
+            console.log(arr3);
+        }
+        return arr3;
+      }
+
+      let result=multiply(a1,a2);
+      console.log(result)
+    </script>
+  </body>
+</html>

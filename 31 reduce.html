@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  const arr=[5,4,7,8];
+  let sum=0;
+  for(var i=0;i<arr.length;i++){
+    sum=sum+arr[i]
+  }
+  console.log(sum)
+
+  // using reduce
+  let result=arr.reduce((runningtotal,n)=>{
+   return runningtotal=runningtotal+n
+  },0)
+  console.log(result)
+
+  // find min in array
+  let min=100;
+  for(var i=0;i<arr.length;i++){
+    if(arr[i]<min){
+      min=arr[i]
+    }
+  }
+  document.write(min,"<br>")
+
+  const result_2=arr.reduce((a,b)=>{
+    return a<b ? a : b;
+  })
+  console.log(result_2)
+
+  // find max in array
+  let arr_4=[58,60,21,89];
+  let max=0;
+  for(var i=0;i<arr_4.length;i++){
+    if(arr_4[i]>max){
+      max=arr_4[i]
+    }
+  }
+  document.write(max,"<br>")
+
+  const result_3=arr.reduce((a,b)=>{
+    return a>b ? a:b;
+  })
+  console.log(result_3)
+
+  const result_4=arr.reduce((currentValue,min)=>{
+    debugger;
+    if(currentValue<min){
+      min=currentValue
+    }
+    return min
+  },100)
+  console.log(result_4)
+  
+
+ 
+  </script>
+</body>
+</html>

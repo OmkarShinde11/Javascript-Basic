@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Fliper</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      font-size: 10px;
+    }
+    section {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    button {
+      padding: 0.8rem 2rem;
+      border-radius: 5px;
+      border: none;
+      background-color: yellow;
+      font-size: 2rem;
+      font-weight: bold;
+      color: red;
+      cursor: pointer;
+      transition: all 2s;
+    }
+  </style>
+  <body>
+    <section>
+      <button id="btn-1" type="submit">Click me</button>
+    </section>
+
+    <!-- javascript code -->
+    <script>
+      let a=document.querySelector('body');
+      let b=document.getElementById('btn-1');
+      b.addEventListener('click',function(){
+        let r=Math.floor(Math.random()*256);
+        let g=Math.floor(Math.random()*256);
+        let b=Math.floor(Math.random()*256);
+        a.style.backgroundColor=`rgb(${r},${g}, ${b})`;
+        console.log(r,g,b)
+     
+      });
+      
+    </script>
+  </body>
+</html>

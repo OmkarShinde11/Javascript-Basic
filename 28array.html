@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      let students = ["omkar", "sai", "kartik", "om", "naresh"];
+      console.log(students);
+      document.write(students[0]);
+      console.log(students.length);
+
+      // add a new element in last position in array
+      students.push("Sid");
+      console.log(students);
+
+      //  remove last element from an array
+      students.pop();
+      console.log(students);
+
+      // add a element to first position
+      students.unshift("Sid",'Mayur');
+      console.log(students);
+      console.log(students.length)
+
+      // remove element from first position
+      students.shift();
+      console.log(students);
+
+      // to remove a value from specific position
+      // use splice
+      // first value is the position where to remove 
+      // second value is the value how much we remove   
+      //  ['omkar', 'sai', 'kartik', 'om', 'naresh']
+      students.splice(1,2);
+      console.log(students)
+
+
+      // to empty an array
+
+      // students=[];
+      // or
+      // students.length=0
+      // console.log(students)
+
+      // to check the index of particular element
+      // 'Mayur', 'kartik', 'om', 'naresh'
+      let position=students.indexOf('Mayur')
+      console.log(position)
+
+
+    
+      
+      let fruits=['Mango','Apple','Banana','Orange','Dreagonfruit','Pineapple'];
+      console.log(fruits.length);
+      console.log(fruits[5]);
+      
+      fruits.push('watermellon')
+      console.log(fruits)
+      fruits.pop();
+      console.log(fruits)
+
+      fruits.unshift('watermellon')
+      console.log(fruits)
+      fruits.shift();
+      console.log(fruits);
+
+      // ['Mango','Apple','Banana','Orange','Dreagonfruit','Pineapple'];
+      // we add watermellon at 3rd position;
+      fruits.splice(3,0,'Watermellon') 
+      console.log(fruits)
+
+      // 'Mango', 'Apple', 'Banana', 'Watermellon', 'Orange', 'Dreagonfruit', 'Pineapple'
+      // here we replace Apple with greenApple
+      fruits.splice(1,1,'Greenapple')
+      console.log(fruits)
+
+      // 'Mango', 'Greenapple', 'Banana', 'Watermellon', 'Orange', 'Dreagonfruit', 'Pineapple'
+      // here we replace greenapple,Banana with kaju
+      fruits.splice(1,2,'Kaju')
+      console.log(fruits)
+
+      // 'Mango', 'Kaju', 'Watermellon', 'Orange', 'Dreagonfruit', 'Pineapple'
+      // we remove kaju 
+      fruits.splice(1,1)
+      console.log(fruits)
+
+
+      // Write a function remove(list, i) where list is an array, and i is a number. The function should not return anything, but instead should remove the element at index i from the list argument.
+
+      function remove(list,i){
+        for(var i=0;i<list.length;i++){
+          console.log(i,list[i])
+        }
+      }
+
+      var list=['omkar','Siddhesh','Mayur']
+      list.splice(0,1);
+      console.log(list)
+
+
+      // Write a function reversed(list) that takes an array of strings, and returns a single which consists of all the strings in the array, in reverse order, concatenated and separated by commas. Note that the function should not add a trailing comma at the end of the reversed string, only between the items. You should also just be adding a comma between items, no spaces.
+
+      function reverse(list){
+        var updatelist='';
+        for(i=list.length-1;i>=0;i--){
+          updatelist=updatelist+list[i];
+          if(i!==0){
+            updatelist=updatelist+","
+          }
+        }
+        return updatelist;
+      }
+      // list =['omkar','Siddhesh','Mayur','Rahul'];
+      // console.log(reverse(list))
+
+      list=['omkar','siddhesh','mayur']
+      console.log(reverse(list))
+
+
+      function calculatePercentage(score,totalPossibleScore){
+        var new_array=[];
+        for(var i=0;i<score.length;i++){
+          new_array.push((100/totalPossibleScore)*score[i])
+        }
+        return new_array
+      }
+      
+      var score=[87,89,87,85];
+      totalPossibleScore=96;
+      console.log(calculatePercentage(score,totalPossibleScore))
+
+
+     
+
+
+
+
+    </script>
+  </body>
+</html>

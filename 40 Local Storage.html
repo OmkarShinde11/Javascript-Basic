@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage</title>
+  </head>
+  <body>
+    <form>
+      Fname<input type="text" id="input-1" /> Lname<input
+        type="text"
+        id="input-2"
+      />
+      <button id="btn-1">Save</button>
+    </form>
+    <button id="btn-2">Click</button>
+    <h1></h1>
+    <!-- <a><button type="submit" id="btn-1">Add-to-cart</button></a> -->
+
+    <script>
+      let a = document.getElementById("btn-1");
+      let input = document.getElementById("input-1");
+      let input1 = document.getElementById("input-2");
+      a.addEventListener("click", () => {
+        localStorage.setItem("Username", input.value);
+        localStorage.setItem("Lastname", input1.value);
+        console.log(localStorage);
+        // localStorage.clear()
+      });
+
+      let b = document.getElementById("btn-2");
+      b.addEventListener("click", () => {
+        for (var i = 1; i < localStorage.length; i++) {
+          let head = document.querySelector("h1");
+          head.innerText += localStorage.getItem("Username");
+          head.innerText += localStorage.getItem("Lastname");
+        }
+      });
+      //   let product={
+      //     name:'Boat-Watch',
+      //     price:'5000',
+      //     quantity:'5'
+      //   }
+
+      //   var obj=JSON.stringify(product)  //JSON.stringify is convet object into string
+      //   console.log(obj)
+      //   localStorage.setItem('my_obj',obj)
+      //   console.log(localStorage);
+
+      //  var obj2=JSON.parse(localStorage.getItem('my_obj'));   //JSON.parse will convert string to object
+      //  console.log(obj2.name)
+    </script>
+  </body>
+</html>

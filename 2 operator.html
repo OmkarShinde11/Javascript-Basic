@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operators</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  document.write("<h1>Javascript Operator</h1><h2>Arithmatic Operator</h2>");
+  // arithmatic operator
+  var a, b;
+  a = 5;
+  b = 10;
+  document.write("Addition is (a+b): ", a + b, "<br>");
+
+  // subtraction operator
+  var num1 = 56;
+  var num2 = 54;
+  document.write("Subtraction is (a-b): ", num1 - num2, "<br>");
+
+  // multiplication operator
+  var x = 5;
+  var y = 10;
+  document.write("Multiplication is (a*b): ", x * y, "<br>");
+
+  // division operator
+  var num3 = 41;
+  var num4 = 55;
+  document.write("Division is (a/b): ", num3 / num4, "<br>");
+
+  // modulus operator
+  var A = 10;
+  var B = 5;
+  document.write("modulus is (a % b) is: ", A % B, "<br>");
+
+  // operation on string
+  let Firstname = "Omkar";
+  let Lastname = "Shinde";
+  let Fullname = Firstname + " " + Lastname;
+  document.write("Name is: ", Fullname, "<br>");
+
+  // assigment operator
+  document.write("<h2>The Assigment Operator</h2>");
+  var a = 16;
+  var b = 20;
+  document.write("Value of a: ", a, "<br>");
+  document.write("Value of b: ", b, "<br>");
+  document.write(
+    "The value of a=b: ",
+    (a = b),
+    " here value of b is assigned to a",
+    "<br>"
+  );
+  document.write("Value of a: ", a, "<br>");
+
+  document.write((a += 2), "<br>"); //a=a+2
+  document.write((a -= 2), "<br>"); //a=a-2
+  document.write((a *= 2), "<br>"); //a=a*2
+  document.write((a /= 2), "<br>"); //a=a/2
+  document.write((a %= 2), "<br>"); //a=a%2
+
+  // comparison operator
+  document.write("<h2>Comparison Operator</h2>");
+  document.write("Value of a: ", a, "<br>");
+  document.write("Value of b: ", b, "<br>");
+  document.write(a != b, "<br>");
+  document.write(a == b, "<br>");
+  document.write(a > b, "<br>");
+  document.write(a < b, "<br>");
+  document.write(a >= b, "<br>");
+  document.write(a <= b, "<br>");
+
+  let str1 = "Omkar";
+  let str2 = "Om";
+  document.write("String is: ", str1 != str2, "<br>");
+  document.write("String is: ", str1 == str2, "<br>");
+  document.write("String is: ", str1 > str2, "<br>");
+  document.write("String is: ", str1 < str2, "<br>");
+  document.write("String is: ", str1 >= str2, "<br>");
+  document.write("String is: ", str1 <= str2, "<br>");
+
+  str1 = "54";
+  str2 = 54;
+  document.write("String is (54,54): ", str1 == str2, "<br>");
+  document.write("String is: ", str1 === str2, "<br>");
+  // != check the var not a data type
+  document.write("String is: ", str1 != str2, "<br>");
+  // !== check the var also data type
+  document.write("String is: ", str1 !== str2, "<br>");
+
+  // logical operator
+  document.write("<h2>Logical And operator</h2>");
+  document.write(true && true, "<br>");
+  document.write(false && true, "<br>");
+  document.write(true && false, "<br>");
+  document.write(false && false, "<br>");
+
+  num3 = 9;
+  num4 = 5;
+  document.write("Number is: ", num3 > num4 && num3 == num4);
+
+  document.write("<h2>Logical Or operator</h2>");
+  document.write(true || true, "<br>");
+  document.write(false || true, "<br>");
+  document.write(true || false, "<br>");
+  document.write(false || false, "<br>");
+
+  document.write("Number is: ", num3 > num4 || num3 == num4);
+
+  document.write("<h2>Logical Not operator</h2>");
+  document.write(!true, "<br>");
+  document.write(!false, "<br>");
+
+  // ternary Operator
+  document.write("<h2>Ternary Operator</h2>");
+  // c=89;
+  // d=58;
+
+  // c='omkar';
+  // d='rahul';
+
+  c = "Omkar";
+  d = "omkar";
+  let check = c == d ? "yes" : "No";
+  document.write(check, "<br>");
+
+  let r = "yes";
+  let quest = "do you love me";
+
+  let result = !(quest == r) ? "YES" : "NO";
+  console.log(result)
+  // confirm("do you love me");
+
+  // let ques = "Do you love me";
+  // let ans = "no";
+  // let result1 = ans.toLocaleUpperCase() == "YES" ? "yes" : "No";
+  // console.log("Do you love me", result1);
+</script>

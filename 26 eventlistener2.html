@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <!-- <button id="btn-1">Click</button>
+  <h1 id="heading"></h1><br> -->
+    <button type="submit" id="btn-2">Click to remove</button>
+    <button type="submit" id="btn-1">Click</button>
+    <div id="main"></div>
+
+    <script>
+      let a = document.getElementById("btn-1");
+      a.addEventListener("click", () => {
+        let b = document.getElementById("main");
+        b.innerHTML += "<p>Hello Everyone</p><h1>Omkar</h1>";
+      });
+
+      let c = document.getElementById("btn-2");
+      c.addEventListener("click", function () { 
+        let b = document.getElementById("main");
+        let ele=b.lastElementChild
+        console.log(ele)
+        b.removeChild(ele)
+      });
+    </script>
+  </body>
+</html>

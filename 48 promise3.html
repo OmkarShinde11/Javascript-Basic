@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promice</title>
+</head>
+<body>
+  <script>
+    let cake={
+      flavours:['Choclate','Rasmalai','Pineapple','Rainbow','Dark Choclate'],
+      layer:['1','2','1 1/2'],
+      kg:['1','1/2','1 1/2','2'],
+    }
+
+    let order=()=>{
+      return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+          let a=prompt('Enter a flavour of cake')
+          resolve(console.log(`You Choose ${a} flavour`))
+
+          setTimeout(()=>{
+            let b=prompt('How much kg of cake you want?')
+            resolve(console.log(`${b} kg of cake`))
+
+            setTimeout(()=>{
+              let c=prompt('How many layer of cake you want')
+              resolve(console.log(`${c} layer of cake`))
+
+              setTimeout(()=>{
+                let d=prompt('Extra Sparkles and candle with cake','yes or no');
+                d=d.toLowerCase()
+                if(d=='yes'){
+                  resolve(console.log(`Extra Sparkles and candle add with cake`))
+                }
+                else{
+                  resolve(console.log(`Thanks for answering`))
+                }
+
+                setTimeout(()=>{
+                  resolve(console.log(`Your ${a} flavour cake is ready`))
+
+                   setTimeout(()=>{
+                    resolve(console.log(`Hope you enjoy it, Thanks for coming Visit again 😊`))
+                   },2000)
+                },3000)
+              },3000)
+            },3000)
+          },3000)
+        },3000)
+      })
+    }
+
+    async function kitchen(){
+      console.log(`Welcome to Omkar Cake Shop`)
+      await order();
+    }
+
+    kitchen()
+  </script>
+</body>
+</html>

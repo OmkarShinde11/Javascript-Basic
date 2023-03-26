@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Events</title>
+</head>
+<style>
+  *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html{
+    font-size: 10px;
+  }
+  img{
+    width:20rem;
+    height:10rem
+  }
+  header{
+    width:100%;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+<body>
+  <section>
+    <header>
+      <img  id="img-1" src="images/Transperent-car.png">
+      <img  id="img-2" src="images/Transperent-car.png">
+      <img  id="img-3" src="images/Transperent-car.png">
+      <img  id="img-4" src="images/Transperent-car.png">
+      <img  id="img-5" src="images/Transperent-car.png">
+      <img  id="img-6" src="images/Transperent-car.png">
+      <img  id="img-7" src="images/Transperent-car.png">
+    </header>
+  </section>
+
+  <section>
+    <button>Click me</button>
+  </section>
+
+
+  <script>
+   let img1=document.getElementById('img-1')
+   let img2=document.getElementById('img-2')
+   let img3=document.getElementById('img-3')
+   let img4=document.getElementById('img-4')
+   let img5=document.getElementById('img-5') 
+   let img6=document.getElementById('img-6')
+   let img7=document.getElementById('img-7')
+
+   img1.addEventListener('click',()=>{
+    alert('You click on me')
+   })
+
+   img1.addEventListener('contextmenu',()=>{
+    alert('You double click on me')
+   })
+
+   img2.addEventListener('dblclick',()=>{
+    alert('You click again on me')
+   })
+
+   img3.addEventListener('contextmenu',()=>{
+    alert('dont right click on me')
+   })
+
+   img4.addEventListener('mouseover',()=>{
+    alert('You again come')
+   })
+
+   img5.addEventListener('mouseout',()=>{
+    alert('leave')
+   })
+
+   img6.addEventListener('mousedown',()=>{
+    alert('You again and again come')
+   })
+
+   img7.addEventListener('mouseup',()=>{
+    alert('leave!!!')
+   })
+
+
+
+   let a=document.querySelector('button')
+   a.addEventListener('click',()=>{
+      console.log('Omkar')
+   })
+   a.addEventListener('contextmenu',()=>{
+    console.log('sid')
+   })
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image</title>
+</head>
+<body>
+  <div>
+    <button type="submit" id="btn-1">1</button>
+    <button type="submit" id="btn-2">2</button>
+    <button type="submit" id="btn-3">3</button>
+  </div>
+
+  <script>
+    let a=document.getElementById('btn-1')
+    let b=document.getElementById('btn-2')
+    let c=document.getElementById('btn-3')
+    let x=document.querySelector('body')
+    a.addEventListener('click',function(){
+      
+      x.style.backgroundImage="url('../images/Beauty.jpg')"
+    })
+
+    b.addEventListener('click',function(){
+      
+      x.style.backgroundImage="url('../images/background.jpg')"
+    })
+
+    c.addEventListener('click',function(){
+      
+      x.style.backgroundImage="url('../images/bg-img.jpg')"
+    })
+  </script>
+</body>
+</html>

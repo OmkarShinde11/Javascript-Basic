@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RemoveEvent</title>
+  </head>
+  <style>
+    #main {
+      background-color: yellow;
+      color: red;
+      width: 25rem;
+      height: 8rem;
+    }
+  </style>
+  <body>
+    <div id="main">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi doloribus
+        beatae corporis, ullam, nihil distinctio sit quam earum sequi soluta
+      </p>
+    </div>
+    <button type="submit" id="btn">Click</button>
+
+    <script>
+      let a = document.getElementById("main");
+      let b = document.getElementById("btn");
+
+      function update() {
+        a.style.border = "1px solid red";
+        a.style.borderRadius = "12px";
+        a.style.textAlign = "center";
+        a.style.fontWeight = "bold";
+        if ((a.style.border = "1px solid red")) {
+          let b = "Event Listener add Sucessfully";
+          a.innerText = `${b}`;
+        }
+      }
+      a.addEventListener("click", update);
+      b.addEventListener("click", () => {
+        a.removeEventListener("click", update);
+        a.innerText = "Event Listener removed Sucessfully";
+        a.style.border = "none";
+        a.style.borderRadius = "0px";
+        a.style.textAlign = "left";
+        a.style.fontWeight = "normal";
+      });
+    </script>
+  </body>
+</html>

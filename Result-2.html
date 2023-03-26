@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Result</title>
+</head>
+<style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  html{
+    font-size:10px;
+  }
+  .main{
+    height:50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: yellow; */
+  }
+  .result-container{
+    width:30rem;
+    height:20rem;
+    border:1px solid blue;
+    border-radius: 8px;
+    box-shadow: 0.5rem 0.5rem 0.9rem 0.1rem rgb(159, 179, 238);
+  }
+  h1{
+    font-weight: bold;
+    font-size:3rem;
+    color:red;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  input{
+    padding:1rem 3rem;
+    border:1px solid red;
+    border-radius: 12px;
+    outline: none;
+    display:block;
+    margin:0 auto;
+    margin-bottom: 2rem;
+  }
+  button{
+    padding:1rem 2rem;
+    border: 1px solid red;
+    border-radius: 12px;
+    font-weight: bold;
+    color: red;
+    display: block;
+    margin:0 auto
+  }
+  button:focus{
+    color:blue;
+  }
+  .result-table{
+    /* display: flex; */
+    justify-content: center;
+    display: none;
+  }
+  #table-1{
+    border-collapse: collapse;
+    width:80%;
+  }
+  tr,th,td{
+    padding:0.9rem 0.5rem;
+    font-size: 2rem;
+  }
+  .buttons{
+    display: flex;
+  }
+  
+</style>
+<body>
+  <section>
+    <div class="main">
+      <div class="result-container">
+        <h1>Enter your name</h1>
+        <input type="text" id="text-field" placeholder="Enter your name" autocomplete="off"><br>
+        <div class="buttons">
+          <button type="submit" id="btn-1">Show result</button>
+          <button type="submit" id="btn-2">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-table">
+      <table border="1" id="table-1">
+        <thead>
+          <tr>
+            <th colspan="9">Marks of Student</th>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <th>English</th>
+            <th>Marathi</th>
+            <th>Hindi</th>
+            <th>Algebra</th>
+            <th>Geometry</th>
+            <th>History</th>
+            <th>Geography</th>
+            <th>ICT</th>
+          </tr>
+        </thead>
+        <tbody id="update">
+
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+  <script>
+    const students={
+      omkar:{name:"Omkar",English:"89", Marathi:"95", Hindi:"96", Algebra:"87", Geometry:"80", History:"98", Geography:"92", ICT:"83"},
+      siddhesh:{name:"Siddhesh",English:"86", Marathi:"90", Hindi:"92", Algebra:"80", Geometry:"85", History:"96", Geography:"91", ICT:"80"},
+      mayur:{name:"Mayur",English:"80", Marathi:"90", Hindi:"99", Algebra:"81", Geometry:"89", History:"99", Geography:"95", ICT:"82"},
+      sairaj:{name:"Sairaj",English:"85", Marathi:"99", Hindi:"92", Algebra:"67", Geometry:"70", History:"90", Geography:"92", ICT:"81"},
+    };
+    let a=document.getElementById('btn-1');
+    let table_1=document.getElementsByClassName('result-table')[0];
+    function change(){
+      let input=document.getElementById('text-field').value;
+      input=input.toLowerCase();
+      console.log(input);
+      let b=document.getElementById('update');
+      let c=document.createElement('tr');
+      c.classList.add('new');
+      c.innerHTML=`<td>${students[input].name}
+        <td>${students[input].English}</td>
+        <td>${students[input].Marathi}</td>
+          <td>${students[input].Hindi}</td>
+            <td>${students[input].Algebra}</td>
+              <td>${students[input].Geometry}</td>
+                <td>${students[input].History}</td>
+                  <td>${students[input].Geography}</td>
+                    <td>${students[input].ICT}</td>`
+       b.appendChild(c)
+      table_1.style.display='flex'
+      if(input.length>=1){
+        input='';
+      }
+    }
+    a.addEventListener('click',change)
+    
+    let x=document.getElementById('btn-2');
+    x.addEventListener('click',()=>{
+      let input=document.getElementById('text-field');
+      input.value=""
+      console.log(input)
+      table_1.style.display="none"
+      let class_1=document.getElementsByClassName('new')[0];
+      class_1.innerHTML=''
+      console.log(class_1)
+      
+    })
+  </script>
+</body>
+</html>

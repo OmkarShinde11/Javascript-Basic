@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Event</title>
+</head>
+<style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  html{
+    font-size:10px
+  }
+  img{
+    width:30rem;
+    height:15rem;
+    position: absolute;
+    left:0px;
+    transition: all 8s;
+  }
+  div{
+    width:100%;
+    height:32vh;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+    position: relative;
+  }
+  form>h1{
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  #inputs{
+    border: none;
+    display: flex;
+    justify-content: center;
+    
+  }
+  input{
+    width:10%;
+    height:10%
+  }
+</style>
+<body>
+  <section>
+    <div>
+      <img src="images/output-onlinepngtools.png" id="img-1">
+    </div>
+
+    <div>
+      <img src="images/Transperent-car.png" id="img-2">
+    </div>
+
+
+    <form>
+      <h1 id="heading-1">Omkar Shinde</h1>
+      <div id="inputs">
+        Bgcolor:<input type="text" id="bg-color" value="">
+        opacity:<input type="text" id="opacity" value="">
+        Font Size:<input type="text" id="font" value="">
+        Moving Car:<input type="text" id="car" value="">
+      </div>
+    </form>
+  </section>
+
+
+
+
+
+
+
+  <script>
+    let img1=document.getElementById('img-1');
+    img1.addEventListener('click',()=>{
+      img1.style.left='80%'
+    })
+    img1.addEventListener('dblclick',()=>{
+      img1.style.transform='rotateY(180deg)'
+    })
+    img1 .addEventListener('mousedown',()=>{
+      img1.style.left='0'
+    })
+
+    // keyboard event keypress , keyup , keydown
+    let input1=document.getElementById('bg-color');
+    let main=document.getElementById('inputs');
+    let heading=document.getElementById('heading-1');
+    let img2=document.getElementById('img-2')
+    input1.addEventListener('keyup',()=>{
+      let a=input1.value;
+      main.style.backgroundColor=`${a}`
+      console.log(a)
+    })
+
+    let input2=document.getElementById('opacity');
+    input2.addEventListener('keyup',()=>{
+      let b=input2.value
+      main.style.opacity=`${b}`
+    })
+
+    let input3=document.getElementById('font');
+    input3.addEventListener('keydown',()=>{
+      let c=input3.value
+      heading.style.fontSize=`${c}`
+    })
+
+    let input4=document.getElementById('car')
+    input4.addEventListener('keyup',()=>{
+      let d=input4.value
+      img2.style.left=`${d}`
+    })
+
+  </script>
+</body>
+</html>

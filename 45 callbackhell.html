@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CallBackhell</title>
+  </head>
+  <body>
+    <script>
+      // let icecream = {
+      //   flavors: ["🍓Strawberry", "🥭Mango", "🍒cheery"],
+      //   liquid: ["💦Water", "🧊ice"],
+      //   holder: ["🍧Waffle-cone", "🧁Cup", "🍢Stick"],
+      //   toppings: ["Sprinkles", "🍫Choclate coating", "oreo", "caramel"],
+      // };
+      // let order = (call_production) => {
+      //   setTimeout(() => {
+      //     console.log(`You have selected a ${icecream.flavors[0]} ice-cream 🍧`);
+      //   },2000);
+      //   call_production();
+      // };
+
+      // let production = () => {
+      //   setTimeout(() => {
+      //     console.log(`${icecream.flavors[0]} was chopped`);
+
+      //     setTimeout(() => {
+      //       console.log(
+      //         `${icecream.liquid[0]} and ${icecream.liquid[1]} has been added it`
+      //       );
+
+      //       setTimeout(() => {
+      //         console.log(`Machine was started`);
+
+      //         setTimeout(() => {
+      //           console.log(`Sprinkle was added`);
+
+      //           setTimeout(()=>{
+      //             console.log(`your ${icecream.holder[0]} is ready to take an ice-cream`)
+
+      //             setTimeout(()=>{
+      //               console.log(`Enjoy your favourite ice-cream`)
+      //             },1000)
+      //           },2000)
+      //         }, 2000);
+      //       }, 3000);
+      //     }, 2000);
+      //   }, 3000);
+      // };
+
+      // order(production)
+
+
+      let cake={
+        flavors:['Choclate','Pineapple','Rasmalai','Rainbow','Vanila','Dark choclate'],
+        Kg:['(1/2)','(1)','(1 1/2)','(2)'],
+        Layer:['1','2','3'],
+      }
+
+      // let cake_order=(callback)=>{
+      //    setTimeout(()=>{
+      //       alert(`You Choose a ${cake.flavors[2]}`)
+      //    },3000)
+      //    callback()
+      // }
+
+      // let order=()=>{
+      //    setTimeout(()=>{
+      //     console.log(`${cake.flavors[2]} is added to kitchen`)
+
+      //     setTimeout(()=>{
+      //       alert(`You want ${cake.Kg[2]} cake`)
+      //       console.log(`You choose ${cake.Kg[2]} cake`)
+
+      //       setTimeout(()=>{
+      //         alert(`${cake.Layer[0]} Layer cake`)
+      //         console.log(`You choose ${cake.Layer[0]} layer cake`);
+
+      //         setTimeout(()=>{
+      //           console.log(`The cake is ready with sparkles and candle with name`)
+
+      //           setTimeout(()=>{
+      //             console.log(`Hope you enjoy it, Thanks for coming Visit again 😊`)
+      //           },1000)
+      //         },2000)
+      //       },3000)
+      //     },5000)
+      //    },4000)
+      // }
+      // cake_order(order)
+
+      // let order=()=>{
+      //   setTimeout(()=>{
+      //     let a=prompt('Enter a flavour of cake');
+      //     console.log(`You choose a ${a} flavour`);
+
+      //     setTimeout(()=>{
+      //       let b=prompt('How much kg of cake you want');
+      //       console.log(`${b} kg of cake`)
+
+      //       setTimeout(()=>{
+      //         let c=prompt(`How many layer of cake you want`);
+      //         console.log(`${c} Layer of cake`)
+
+      //         setTimeout(()=>{
+      //           let d=prompt('Extra sparkles and candle with cake','yes or no');
+      //           d=d.toLowerCase();
+      //           if(d=='yes'){
+      //             console.log(`Extra sparkles and candle added with cake`)
+      //           }
+      //           else{
+      //             console.log(`Thanks for answering`)
+      //           }
+
+      //           setTimeout(()=>{
+      //             console.log(`Hope you enjoy it, Thanks for coming Visit again 😊`)
+      //           },2000)
+      //         },4000)
+      //       },3000)
+      //     },3000)
+      //   },3000)
+      // }
+
+      // order()
+
+
+      let timer=setTimeout(()=>{
+        alert('Wake up')
+      },3000)
+
+      clearTimeout(timer)
+      
+    </script>
+  </body>
+</html>

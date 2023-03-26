@@ -1,0 +1,1 @@
+document.write('<h1>My first js1 code</h1>')
