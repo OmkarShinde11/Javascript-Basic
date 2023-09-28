@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+</head>
+
+<body>
+
+    <script>
+        //write a function that  return a given input is array ot not
+
+        function is_array(input) {
+            if (toString.call(input) === "[object Array]") {
+                return true
+            }
+            return false
+        }
+
+        console.log('isArray ', is_array([1, 2, 3, 4]))
+
+        // write a function that return clone of an array
+        function array_clone(input) {
+            return input.slice()
+        }
+
+        console.log('CloneArray ', array_clone([1, 2, 3, 4]))
+
+        // Write a JavaScript function to get the first element of an array. Passing the parameter 'n' will return the first 'n' elements of the array.
+        function first(array, n) {
+            if (n == undefined) {
+                return array.shift();
+            }
+            if (n < 0) {
+                return [];
+            }
+            array = array.slice(0, n);
+            return array
+        }
+        console.log('firstElement ', first([], -3))
+
+        //Write a JavaScript function to get the last element of an array. Passing the parameter 'n' will return the last 'n' elements of the array.
+        function last(array, n) {
+            if (n == undefined) {
+                return array.pop();
+            }
+            if (n < 0) {
+                return [];
+            }
+            return array.slice(Math.max(array.length - n, 0));
+        }
+        console.log('lastElement', last([7, 9, 0, -2], 3));
+
+        // Write a simple JavaScript program to join all elements of the following array into a string.
+        function word(n) {
+            a = n.join(' + ')
+            return a
+        }
+        console.log('Sentence', word(['Red', 'Green', 'White']));
+
+        //Write a JavaScript program that accepts a number as input and inserts dashes (-) between each even number. For example if you accept 025468 the output should be 0-254-6-8.
+
+        // function dashes(val){
+        //     const num=window.prompt();
+        //     let str=num.toString();
+        //     let result=[str[0]];
+        //     for(let i=1;i<str.length;i++){
+        //         if(str[i-1]%2==0 && str[i]%2==0){
+        //             result.push('-',str[i])
+        //         }
+        //         else{
+        //             result.push(str[i])
+        //         }
+        //     } 
+        //     return result.join('')          
+        // }
+        // let data='024678'
+        // console.log('EvenDashNumber',dashes(+data))
+
+        let num_1 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
+        console.log(num_1.sort());
+
+        // Write a JavaScript program to find the most frequent item in an array.  //IMP
+        function occurence(input_array) {
+            var mf = 1;
+            var m = 0;
+            var item;
+            for (var i = 0; i < input_array.length; i++) {
+                for (var j = i; j < input_array.length; j++) {
+                    if (input_array[i] == input_array[j])
+                        m++;
+                    if (mf < m) {
+                        mf = m;
+                        item = input_array[i];
+                    }
+                }
+                m = 0;
+            }
+
+        }
+        console.log('array', occurence([5, 5, 5, 8, 8, 4, 6, 7, 2]))
+        var x = '99';
+        var y = 101;
+        alert(typeof typeof (undefined))
+
+        //Write a JavaScript program that accepts a string as input and swaps the case of each character. For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.
+        function swaps(str) {
+            let result = [];
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] == " ") {
+                    result.push(" ");
+                }
+                if (str[i] == str[i].toLowerCase() && str[i] != " ") {
+                    result.push(str[i].toUpperCase());
+                }
+                if (str[i] == str[i].toUpperCase() && str[i] != " ") {
+                    result.push(str[i].toLowerCase());
+                }
+
+            }
+            let sentence = result.join('');
+            return sentence
+        }
+        console.log('swaps', swaps('The Quick Brown Firefox'))
+
+        // Write a JavaScript program that prints the elements of the following array.
+        // Note : Use nested for loops.
+        // Sample array : var a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+        // Sample Output :
+        // "row 0"
+        // " 1"
+        // " 2"
+        // " 1"
+        // " 24"
+        // "row 1"
+        // -----
+        // -----
+
+        var a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27, 55], [7, 4, 28, 14], [3, 10, 26, 7]];
+        console.log('Nested Array', print_array(a))
+
+        function print_array(input) {
+            let j = 0;
+            input.forEach(element => {
+                console.log(`row ${j}`);
+                for (let i = 0; i < element.length; i++) {
+                    console.log('data', element[i])
+                }
+                j++;
+            });
+        }
+
+        // function print_array(a) {
+        //     for (var i in a) {
+        //         console.log("row " + i);
+        //         for (var j in a[i]) {
+        //             console.log(" " + a[i][j]);
+        //         }
+        //     }
+        // }
+
+
+        //  Write a JavaScript program to find the sum of squares of a numerical vector.
+        function squares(arr) {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += Math.pow(arr[i], 2)
+            }
+            return sum;
+        }
+        console.log(squares([1, 2, 3, 4, 5]))
+
+        //Write a JavaScript program to compute the sum and product of an array of integers.
+        function operation(arr) {
+            let sum = 0;
+            let prd = 1;
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+                prd *= arr[i];
+            }
+            console.log('sum is: ', sum, 'Prd is: ', prd)
+            return sum, prd;
+        }
+        console.log('Sum is: ', operation([1, 2, 3, 4, 5]))
+
+        let number = 5;
+        number *= 3;
+        console.log('number:', number)
+
+        //Write a JavaScript program to remove duplicate items from an array
+        function duplicate(arr) {
+            let obj = {};
+            let out = [];
+            for (x = 0; x < arr.length; x++) {
+                obj[arr[x]] = 0;//this remove insertion of duplicate value
+            }
+            for (x in obj) {
+                out.push(x);
+            }
+            return out
+        }
+        console.log(duplicate([2, 4, 3, 5, 4, 3, 2]))
+
+
+        function getOrdinalNumber(number) {
+            const lastDigit = number % 10;
+            const lastTwoDigits = number % 100;
+
+            if (lastTwoDigits >= 11 && lastTwoDigits <= 13) {
+                return `${number}th`;
+            }
+
+            switch (lastDigit) {
+                case 1:
+                    return `${number}st`;
+                case 2:
+                    return `${number}nd`;
+                case 3:
+                    return `${number}rd`;
+                default:
+                    return `${number}th`;
+            }
+        }
+        console.log(getOrdinalNumber(1234))     
+
+//         We have the following arrays :
+// color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];  IMP
+// o = ["th","st","nd","rd"]
+// Write a JavaScript program to displa y the colors in the following way :
+// "1st choice is Blue ."
+// "2nd choice is Green."
+// "3rd choice is Red."
+
+
+        var color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];
+
+        function oridinal(n){
+            var o = ["th","st","nd","rd"];
+            var x=n%100;
+            var oridinalnumber=x+(o[x]||o[0])
+            return oridinalnumber
+        }
+        for(var i=0;i<color.length;i++){
+            var oridinalNum=i+1;
+            var initialoutput=oridinal(oridinalNum)
+            var output=(initialoutput + " Choice is "+ color[i]);
+            console.log(output);
+        }
+
+
+        //There are two arrays with individual values. Write a JavaScript program to compute the sum of each individual index value in the given array.
+
+        let player1=[1,2,3,6,5,4];
+        let player2=[5,7,4,8,5];
+        function sumOftwoArray(arr1,arr2){
+            let result=[];
+            for(let i=0;i<arr1.length;i++){
+                if(arr1[i]==undefined || arr2[i]==undefined){
+                    arr1[i]=0;
+                    arr2[i]=0;
+                }
+                let sum=arr1[i]+arr2[i]
+               result.push(sum)
+            }
+            return result;
+        }
+        console.log('sumOfTwoArray',sumOftwoArray(player1,player2))
+
+        //Write a JavaScript program to shuffle an array.  IMP
+
+        function shuffle(arr){
+            var ctr=arr.length;
+            let index;
+            let temp;
+            while(ctr>0){
+                index=Math.floor(Math.random()*ctr);
+                ctr--;
+                temp=arr[ctr];
+                arr[ctr]=arr[index];
+                arr[index]=temp;
+            }
+            return arr;
+        }
+        console.log(shuffle([3,6,1,2,7,8]))
+
+     //Note : A binary search or half-interval search algorithm finds the position of a specified input value within an array sorted by key value.
+        function binary_search(arr,item){
+           let a=arr.findIndex(val=>val==item);
+           return a;
+        }
+        console.log(binary_search([1,4,3,2,5,6,8,7],2))
+
+        //Write a JavaScript program to find duplicate values in a JavaScript array.
+        function duplication(arr){
+            let result=[];
+            for(let i=0;i<arr.length;i++){
+                for(let j=i;j<arr.length;j++){
+                    if(arr[i]==arr[j+1]){
+                        if(!result.includes(arr[i])){
+
+                            result.push(arr[i]);
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+        console.log(duplication([5,3,4,3,5,6]))
+        console.log(duplication([1,4,4,7,8,6]))
+        console.log(duplication([1,3,1,1,4,6,3,8]))
+
+        //Write a JavaScript function to remove. 'null', '0', '""', 'false', 'undefined' and 'NaN' values from an array.
+        function removeItem(arr){
+            return arr.filter(val=>{
+                if(isNaN(val) || val==0 || val=='' || val==false || val==undefined || val==null){
+                    return false
+                }
+                return true;
+            })
+        }
+        console.log(removeItem([NaN, 0, 15, false, -22, '',undefined, 47, null]))
+
+        //Write a JavaScript program to compute the union of two arrays.
+        function union(arr1,arr2){
+           let newArray=[];
+           arr1.filter(val=>{
+            if(!newArray.includes(val)){
+               newArray.push(val);
+            }
+            else{
+                return false
+            }
+           })
+           arr2.filter(val=>{
+            if(!newArray.includes(val)){
+              newArray.push(val);
+            }
+            else{
+                return false
+            }
+           })
+           return newArray;
+        }
+        console.log(union([1, 2, 3], [100, 2, 1, 10]))
+
+        //Write a JavaScript program to compute the intersection of two arrays.
+        function intersection(arr1,arr2){
+            let newArray=[];
+            for(let i=0;i<arr1.length;i++){
+              if(arr1.includes(arr1[i]) && arr2.includes(arr1[i])){
+                newArray.push(arr1[i])
+              }
+            }
+            return newArray;
+        }
+        console.log(intersection([1, 2, 3], [100, 2, 1, 10]))
+
+        //Write a JavaScript program to find the leap years in a given range of years. IMP
+        function year_range(st_year,lt_year){
+            var yearArray=[];
+            var leapArray=[];
+            for(let i=st_year;i<=lt_year;i++){
+               yearArray.push(i);
+            }
+            yearArray.forEach(val=>{
+                if(test_year(val)){
+                    leapArray.push(val)
+                }
+            })
+            return leapArray
+        }
+        function test_year(year){
+            if((year % 4==0 && year % 100!=0) || (year % 100==0 && year % 400==0)){
+                return year;
+            }
+            else{
+                return false;
+            }
+        }
+        console.log(year_range(2000,2012))
+
+        //Write a JavaScript function to find the difference between two arrays.
+        function difference(arr1,arr2){
+           let newarray=[];
+           arr1.forEach(val=>{
+              if(arr1.includes(val) && arr2.includes(val)){
+                return false;
+              }
+              else{
+                newarray.push(val);
+              }
+           })
+           arr2.forEach(val=>{
+            if(arr1.includes(val) && arr2.includes(val)){
+                return false
+            }
+            else{
+                newarray.push(val)
+            }
+           })
+           return newarray
+        }
+
+        console.log(difference([1,2,3],[100,2,1,10]))
+        console.log(difference([1, 2, 3], [100, 2, 1, 10]));
+        
+        //Write a JavaScript function to find the difference between two arrays.
+        function difference1(arr1,arr2){
+            var array1=arr1.toString().split(',').map(Number);
+            var array2=arr2.toString().split(',').map(Number);
+            let newArray=[];
+            console.log(array1,array2);
+            array1.forEach(val=>{
+                if(array1.includes(val) && array2.includes(val)){
+                    return false;
+                }
+                else{
+                    newArray.push(val)
+                }
+            })
+            array2.forEach(val=>{
+                if(array1.includes(val) && array2.includes(val)){
+                    return false;
+                }
+                else{
+                    newArray.push(val)
+                }
+            })
+            return newArray
+        }
+        console.log(difference1([1, 2, 3, 4, 5], [1, [2], [3, [[4]]],[5,6]]));
+
+
+        //Write a JavaScript function that merges two arrays and removes all duplicate elements.
+        function merge_array(arr1,arr2){
+            let newArray=[...arr1,...arr2];
+            console.log(newArray);
+            let resultArray=[];
+            // [1,2,3,2,30,1];
+            let obj={};
+            for(let i=0;i<newArray.length;i++){
+                obj[newArray[i]]=0
+            }
+
+            for(i in obj){
+                resultArray.push(i)
+            }
+            return resultArray.map(Number);
+        }
+        console.log(merge_array([1,2,3],[2,30,1]))
+
+        //Write a JavaScript program to find a pair of elements (indices of the two numbers) in a given array whose sum equals a specific target number.
+        function pair(arr,target){
+            var index;
+            var index_2;
+            var resultArray=[];
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]+arr[i+1]==target){
+                    resultArray.push(i);
+                    resultArray.push(i+1)
+                }
+            }
+            return resultArray.toString();
+        }
+        console.log(pair([10,20,10,40,50,60,70],50))
+
+        //Write a JavaScript function to find the longest common starting substring in a set of strings.
+        function common_substring(input_arr){
+            let commonsubstr='';
+            const shortestString=input_arr.reduce((shortest,current)=>
+              shortest.length<current.length?shortest:current
+            )
+            console.log('shortest',shortestString);
+
+            for(let i=0;i<shortestString.length;i++){
+                if(input_arr.every(str=>str[i]==shortestString[i])){
+                   commonsubstr+=shortestString[i];
+                }
+            }
+            return commonsubstr
+        }
+        console.log(common_substring(['flower','flour','flight']))
+
+        //Write a javascript function that fills value in an array based on min and max bound
+        function fillValues(min,max){
+            let resultarray=[];
+            for(let i=min;i<=max;i++){
+                resultarray.push(i);
+            }
+            return resultarray;
+        }
+        console.log(fillValues(0,10))
+
+        //Write a javascript function that fills an array with string
+        function fillStrings(start,end){
+            let resultArray=[];
+            const startCharCode = start.charCodeAt();
+            const endCharCode = end.charCodeAt();
+            for(let i=startCharCode;i<=endCharCode;i++){
+                const char=String.fromCharCode(i);
+                resultArray.push(char)
+            }
+            return resultArray;
+        }
+        console.log(fillStrings('a','z'))
+
+        //Write a javascript function that fills an array with string but for loop will increment by 2
+
+        function fillStrings1(start,end,count){
+            let resultArray=[];
+            let startCharCode=start.charCodeAt();
+            let endCharCode=end.charCodeAt();
+
+            for(let i= startCharCode;i<=endCharCode;i+=count){
+                const char=String.fromCharCode(i);
+                resultArray.push(char);
+            }
+            return resultArray;
+        }
+        console.log(fillStrings1('a','z',2))
+
+        //Write a JavaScript program to flatten a nested (any depth) array. If you pass shallow, the array will only be flattened to a single level.
+        function flatten(input_arr){
+            return input_arr.reduce((result, current)=>{
+                if(Array.isArray(current)){
+                    return result.concat(flatten(current))
+                }
+                else{
+                     return result.concat(current)
+                }
+            },[])
+            // let array=[].concat(...input_arr);
+            // return array;
+        }
+        console.log(flatten([1, [2], [3, [[4]]],[5,6]]));
+
+        //Alternative Soluction for above code.
+        function flatten1(arr1){
+            return arr1.toString().split(',').map(Number);
+        }
+        console.log(flatten1([1, [2], [3, [[4]]],[5,6]]));
+
+
+        //Check if all the answers in the array is the same:
+        const survey = [
+            { name: "Steve", answer: "Yes" },
+            { name: "Jessica", answer: "Yes" },
+            { name: "Peter", answer: "Yes" },
+            { name: "Elaine", answer: "No" }
+        ];
+        function SameAnswers(input_arr){
+            return input_arr.every(item=>{
+                let index=input_arr.indexOf(item);
+                if(index===0){
+                    return true
+                }
+                else{
+                    return item.answer===input_arr[index-1].answer
+                }
+            })
+        }
+        console.log(SameAnswers(survey))
+
+        //Write a JavaScript function to sort the following array of objects by title value.  IMP
+        var library = [
+            { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254 },
+            { author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264 },
+            { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245 }
+        ];
+        function sortArray(input_arr){
+            return input_arr.sort(comparator);
+        }
+
+        function comparator(data1,data2){
+            return data1.title.toString().localeCompare(data2.title);
+        }
+        console.log(sortArray(library))
+
+        //Write a JavaScript function to filter false, null, 0 and blank values from an array.
+        function filter_array_values(input_arr){
+            return input_arr.filter(val=>{
+                if(val==0 || val=='' || val==false || val==null){
+                    return false
+                }
+                else{
+                    return true
+                }
+            })
+        }
+        console.log(filter_array_values([58, '', 'abcd', true, null, false, 0]))
+
+        function  remove_array_element(arr,item){
+          let index=arr.findIndex(val=>val==item);
+          arr.splice(index,1)
+          return arr
+        }
+        console.log(remove_array_element([2, 5, 9, 6], 5))
+
+        // Write a JavaScript function to find an array containing a specific element.
+        function contains(arr,n){
+            if(arr.includes(n)){
+                return true
+            }
+            return false
+        }
+        console.log(contains([2,5,9,6],5))
+
+        //Write a JavaScript script to empty an array while keeping the original.
+        function copy(arr){
+            let copyArray=arr.slice();
+            return copyArray
+        }
+        console.log(copy([1,5,8,9,3]))
+
+        //Write a JavaScript function to create a specified number of elements with a pre-filled numeric value array.
+        function array_filled(count,element){
+            let resultArray=[];
+            for(let i=1;i<=count;i++){
+                resultArray.push(element)
+            }
+            return resultArray;
+        }
+        console.log(array_filled(6,0))
+
+        //Write a JavaScript function to create a specified number of elements with a pre-filled string value array.
+        function string_filled(count,element){
+            let resultArray=[];
+            for(let i=1;i<=count;i++){
+                resultArray.push(element)
+            }
+            return resultArray;
+        }
+        console.log(string_filled(3,'Admin'))
+
+        // Write a JavaScript function to generate an array of integer numbers, increasing one from the starting position, of a specified length.
+        function array_range(start,len){
+            let arr=[];
+            for(let i=0;i<len;i++,start++){
+                arr.push(start);
+            }
+            return arr
+        }
+        console.log(array_range(-6,4))
+
+        //Write a JavaScript function to move an array element from one position to another.
+        function move(arr,old_index,new_index){
+            if (old_index < 0) {
+                old_index += arr.length;
+            }
+            if (new_index < 0) {
+                new_index += arr.length;
+            }
+             arr.splice(new_index, 0, arr.splice(old_index, 1)[0]); 
+             return arr
+        }
+        console.log(move([10,20,30,40,50],0,2))
+        console.log(move([10, 20, 30, 40, 50], -1, -2));
+
+        // Write a JavaScript function to get random items from an array.
+        function random(input_arr){
+            let index=Math.floor(Math.random() * input_arr.length);
+            return input_arr[index];
+        }
+        console.log(random([1,4,5,9,8]))
+
+        //Write a JavaScript function to get the nth largest element from an unsorted array.
+        function nthLargest(input_arr,index){
+            let a=input_arr.sort((a,b)=>{
+                return b-a;
+            })
+            console.log(a)
+            return a[index-1];
+        }
+        console.log(nthLargest([43, 56, 23, 89, 88, 90, 99, 652],4))
+
+        // Write a JavaScript function to generate an array between two integers of 1 step length.
+        function rangeBetween(start,end){
+            let resultArray=[];
+            for(let i=start;i<=end;i++){
+                resultArray.push(i);
+            }
+            return resultArray;
+        }
+        console.log(rangeBetween(4,7))
+        console.log(rangeBetween(-4, 7));
+
+        function unique(input_arr1,input_arr2){
+            let arr1=input_arr1.toString().split(',').map(Number);
+            let arr2=input_arr2.toString().split(',').map(Number);
+            let resultArray=[];
+            arr1.forEach(val=>{
+                if(!resultArray.includes(val)){
+                    resultArray.push(val)
+                }
+            })
+            arr2.forEach(val=>{
+                if(!resultArray.includes(val)){
+                    resultArray.push(val)
+                }
+            })
+            return resultArray
+        }
+        console.log(unique([1, 2, 3, 4, 5], [1, [2], [3, [[4]]],[5,6]]))
+
+        function unzip(arr1,arr2){
+            let resultArray=[];
+            let stringArray=[];
+            let numberArray=[];
+            let booleanArray=[];
+           for(let i=0;i<arr1.length;i++){
+            if(typeof(arr1[i])=='string' || typeof(arr2[i])=='string'){
+                if(arr1[i]==undefined){
+                    stringArray.push(arr2[i])
+                }
+                if(arr2[i]==undefined){
+                    stringArray.push(arr1[i])
+                }
+                else{
+                    stringArray.push(arr1[i],arr2[i]);
+                }
+            }
+            else if(typeof(arr1[i])=='number' || typeof(arr2[i])=='number'){
+                
+                if(arr1[i]==undefined){
+                    numberArray.push(arr2[i])
+                }
+                if(arr2[i]==undefined){
+                    numberArray.push(arr1[i])
+                }
+                else{
+                    numberArray.push(arr1[i],arr2[i])
+                }
+            }
+            else if(typeof(arr1[i])=='boolean' || typeof(arr2[i])==='boolean'){
+                
+                if(arr1[i]==undefined){
+                    booleanArray.push(arr2[i])
+                }
+                if(arr2[i]==undefined){
+                    booleanArray.push(arr1[i])
+                }
+                else{
+                    booleanArray.push(arr1[i],arr2[i]);
+                }
+            }
+           }
+            resultArray.push(stringArray,numberArray,booleanArray);
+            return resultArray
+        }
+        console.log(unzip(['a',1,true],['b',2,false]))
+        console.log(unzip(['a',1,true],['b',2]))
+
+        //Write a JavaScript function to create an object from an array, using the specified key and excluding it from each value.
+        function indexOn(input_arr,key){
+            debugger;
+             return input_arr.reduce((obj,v)=>{
+                const {[key]:id,...data}=v;
+                console.log(v)
+                obj[id]=v;
+                return obj
+            },{})
+        }
+        console.log(indexOn([{ id: 10, name: 'apple' }, { id: 20, name: 'orange' }],x=>x.id))
+
+        //Write a JavaScript program to find all the unique values in a set of numbers.
+        function uniqueSets(input_arr){
+            let resultArray=[];
+            input_arr.forEach(val=>{
+                if(!resultArray.includes(val)){
+                    resultArray.push(val)
+                }
+            })
+            return resultArray;
+        }
+        console.log(uniqueSets([1, 2, 2, 3, 4, 4, 5]))
+        console.log(uniqueSets([1, -2, -2, 3, 4, -5, -6, -5]))
+
+        // Write a JavaScript program that takes an array of integers and returns false if every number is not prime. Otherwise, return true.
+        function isPrime(arr){
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]==1 || arr[i]>2 && arr[i] %2==0){
+                    return false
+                }
+            }
+            return true
+        }
+        console.log(isPrime([2,3,5,7]))
+        console.log(isPrime([2,3,5,7,8]))
+
+        //Write a JavaScript program that takes an array with mixed data type and calculates the sum of all numbers.
+        function isSum(input_arr){
+            let sum=0;
+            for(let i=0;i<input_arr.length;i++){
+                if(typeof(input_arr[i])=='number'){
+                    sum+=input_arr[i];
+                }
+            }
+            return sum;
+        }
+        console.log(isSum([2, "11", 3, "a2", false, 5, 7, 1]))
+        console.log(isSum([2, 3, 0, 5, 7, 8, true, false]))
+
+        //Write a JavaScript program that takes an array of numbers and returns the third smallest number.
+        function third(input_arr){
+            return input_arr.sort((x,y)=>y-x)[input_arr.length-3];
+        }
+        console.log(third([2,3,5,7,1]))
+        console.log(third([2,3,0,5,7,8,-2,-4]))
+
+        //Write a JavaScript program to check if an array is a factor chain or not.
+        function factorCheck(arr){
+            for(let i=0;i<arr.length-1;i++){
+                if(arr[i+1] % arr[i]!=0){
+                    return false;
+                }
+            }
+            return true 
+        }
+        console.log(factorCheck([2, 4, 8, 16, 32]))
+
+        function NANIndex(arr){
+            let resultArray=[];
+            for(let i=0;i<arr.length;i++){
+                if(isNaN(arr[i])){
+                    resultArray.push(i)
+                }
+            }
+            return resultArray;
+        }
+        console.log(NANIndex([2, NaN, 8, 16, 32]));
+        console.log(NANIndex([2, 4, NaN, 16, 32, NaN]));
+        console.log(NANIndex([2, 4, 16, 32]))
+        
+        function countArray(arr){
+            let count=0;
+            for(let i=0;i<arr.length;i++){
+                if(Array.isArray(arr[i])){
+                    count+=1
+                }
+            }
+            return count
+        }
+        console.log(countArray([2,8,[6],3,3,5,3,4,[5,4]]))
+        console.log(countArray([2,8,[6,3,3],[4],5,[3,4,[5,4]]]))
+    </script>
+

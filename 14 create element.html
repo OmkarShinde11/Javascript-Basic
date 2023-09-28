@@ -23,8 +23,12 @@
       let a = document.querySelector("section");
       let b = document.createElement("div");
       b.innerHTML = "<h1>Omkar Shinde</h1>";
-      b.setAttribute('id','new')
+      b.setAttribute('class','new')
       a.appendChild(b);
+
+      let random=document.createElement('h1');
+      random.innerText='Finally'
+      b.appendChild(random)
 
       let c = document.createElement("img");
       c.setAttribute("src", "Images/background.jpg");

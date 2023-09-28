@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+</head>
+
+<body>
+    <script>
+        //Write a JavaScript program that displays the largest integer among two integers.
+        function largest(){
+            let a=window.prompt('Enter an Number');
+            let b=window.prompt('Enter an number');
+            a=Number(a);
+            b=Number(b);
+            if(a>b){
+                return a
+            }
+            if(a<b){
+                return b
+            }
+            else{
+                return 'Both are equal'
+            }
+        }
+        console.log(largest())
+
+        //Write a JavaScript conditional statement to find the sign of the product of three numbers. Display an alert box with the specified sign.
+        function sign(a,b,c){
+            let sum=a*b*c;
+            if(sum>0){
+                 alert('sum is positive','+')
+            }
+            else{
+                 alert('sum is negetive','-')
+            }
+            return sum;
+        }
+        console.log(sign(-9,7,4))
+
+        //Write a JavaScript conditional statement to sort three numbers. Display an alert box to show the results.
+        function sort(){ 
+            let num1=Number(window.prompt('Enter first  number'));
+            let num2=Number(window.prompt('Enter second number'));
+            let num3=Number(window.prompt('Enter third number'));
+            let sortednumbers;
+            if(num1<=num2 && num1<=num3){
+                if(num2<=num3){
+                    sortednumbers=[num1,num2,num3]
+                }
+                else{
+                    sortednumbers=[num1,num3,num2]
+                }
+            }
+            else if(num2<=num1 && num2<=num3){
+                if(num1<=num3){
+                    sortednumbers=[num2,num1,num3]
+                }
+                else{
+                    sortednumbers=[num2,num3,num1]
+                }
+            }
+            else if(num3<=num1 && num3<=num2){
+                if(num1<=num2){
+                    sortednumbers=[num3,num1,num2]
+                }
+                else{
+                    sortednumbers=[num3,num2,num1]
+                }
+            }
+            return sortednumbers;
+        }
+        console.log(sort())
+
+        // Write a JavaScript conditional statement to find the largest of five numbers. Display an alert box to show the results.
+        function largest(num1,num2,num3,num4,num5){
+            let large;
+            if(num1>num2 && num1>num3 && num1>num4 && num1>num5){
+                large=num1;
+            }
+            else if(num2>num1 && num2>num3 && num2>num4 && num2>num5){
+                large=num2
+            }
+            else if (num3 > num1 && num3 > num2 && num3 > num4 && num3 > num5) {
+                large = num3;
+            } else if (num4 > num1 && num4 > num2 && num4 > num3 && num4 > num5) {
+                large = num4;
+            } else {
+                large = num5;
+            }
+            return large
+        }
+        console.log(largest(-5, -2, -6, 0, -1))
+
+        //Write a JavaScript for loop that iterates from 0 to 15. For each iteration, it checks if the current number is odd or even, and displays a message on the screen.
+        function oddEven(a,b){
+            for(let i=a;i<=b;i++){
+                if(i%2==0){
+                    console.log(`${i} is Even`)
+                }
+                else{
+                    console.log(`${i} is odd`)
+                }
+            }
+        }
+        console.log(oddEven(0,15))
+
+        //Write a JavaScript program that iterates integers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for multiples of five print "Buzz". For numbers multiples of both three and five print "FizzBuzz".
+        function demoPrint(a,b){
+            for(let i=a;i<=b;i++){
+                if(i%3==0){
+                    console.log('Fizz')
+                }
+                if(i%5==0){
+                    console.log('Bizz')
+                }
+                if(i%3==0 && i%5==0){
+                    console.log('FizzBizz')
+                }
+            }
+        }
+        console.log(demoPrint(1,100))
+
+        function isHappyNumber(n) {
+                while (n !== 1) {
+                    n = sumOfSquaresOfDigits(n);
+                }
+                return n === 1;
+            }
+    function sumOfSquaresOfDigits(n) {
+            let sum = 0;
+            while (n > 0) {
+                const digit = n % 10;
+                sum += digit * digit;
+                n = Math.floor(n / 10);
+            }
+            return sum;
+        }
+
+// Test the function
+const num = 19; // Change this to test other numbers
+    const result = isHappyNumber(num);
+
+    if (result) {
+        console.log(`${num} is a happy number.`);
+    } else {
+        console.log(`${num} is not a happy number.`);
+    }
+
+
+    //Write a JavaScript program to find the Armstrong numbers of 3 digits.
+    function Armstrong(){
+        let num=window.prompt('enter three digit number');
+        console.log(num);
+        let sum=0
+        for(let i=0;i<num.length;i++){
+           sum+=Math.pow(Number(num[i]),3);
+        }
+        if(sum==Number(num)){
+           return  console.log(`${num} is an armstrong number`)
+        }
+        else{
+            return console.log(`${num} is not an armstronge number`)
+        }
+
+    }
+    console.log(Armstrong())
+
+    //Write a JavaScript program that computes the average marks of the following students. Then, this average is used to determine the corresponding grade.
+    function assignGrade(marks){
+       if(marks<60){
+        return alert('The Grade is: F')
+       }
+       if(marks<70){
+        return alert('The Grade is: D')
+       }
+       if(marks<80){
+        return alert('The Grade is: C')
+       }
+       if(marks<90){
+        return alert('The Grade is: B')
+       }
+       if(marks<100){
+        return alert('The Grade is: A')
+       }
+    }
+    assignGrade(69)
+
+    //Write a JavaScript program to construct the following pattern, using a nested for loop.
+    function pattern(){
+        let chr;
+        for(let i=1;i<=5;i++){
+            for(let j=1;j<=i;j++){
+                if(chr==undefined){
+                    chr="*"
+                }
+                else{
+                    chr=chr +"*"
+                }
+            }
+            document.write(chr,'<br>');
+            chr='';
+        }
+    }
+    pattern();
+
+    //Write a JavaScript program to compute the greatest common divisor (GCD) of two positive integers.
+    function GCD(a,b){
+     while(b>0){
+        let reminder=a%b;
+        a=b;
+        b=reminder
+     }
+     return a;
+    }
+    console.log(GCD(12,18))
+
+    // Write a JavaScript program to sum 3 and 5 multiples under 1000.
+    function findSum(a,b){
+        let sum=0;
+        for(let i=0;i<=999;i++){
+            if(i %a==0 || i%b==0){
+                sum+=i
+            }
+        }
+        return sum;
+    }
+    console.log(findSum(3,5))
+    
+    </script>
+</body>

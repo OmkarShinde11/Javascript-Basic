@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+</head>
+
+<body>
+    <script>
+        function year_range(start,end){
+            let result=[];
+            let leapyear=[];
+            for(let i=start;i<=end;i++){
+                result.push(i);
+            }
+            result.forEach(val=>{
+                if(test_year(val)){
+                    leapyear.push(val)
+                }
+            })
+            return leapyear;
+        }
+
+        function test_year(year){
+            if((year%4==0 && !year%100==0) || (year%100==0 && year%400==0)){
+                return year
+            }
+        }
+        console.log(year_range(2012,2019))
+
+
+        function shuffle(arr){
+            let ctr=arr.length;
+            let temp;
+            while(ctr>0){
+                let index=Math.floor(Math.random()*ctr);
+                ctr--;
+                temp=arr[ctr];
+                arr[ctr]=arr[index];
+                arr[index]=temp;
+            }
+            return arr;
+        }
+        console.log(shuffle([1,4,3,5,6]))
+
+        let arr1=[1, [2], [3, [[4]]],[5,6]];
+        let a=arr1.toString().split(',').map(Number);
+        console.log(a);
+
+        function intersection(arr1,arr2){
+            let result=[];
+            arr1.forEach(val=>{
+                if(arr1.includes(val) && arr2.includes(val)){
+                    result.push(val)
+                }
+            })
+            return result;
+        }
+        console.log(intersection([1, 2, 3], [100, 2, 1, 10]))
+
+             var library = [
+                { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254 },
+                { author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264 },
+                { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245 }
+            ];
+            function sorting(arr){
+                return arr.sort((a,b)=>{
+                    return a.title.toString().localeCompare(b.title)
+                })
+            }
+        console.log(sorting(library))
+
+        function num_range(a,b,n){
+            let result=[];
+            let start=a.charCodeAt();
+            let end=b.charCodeAt();
+            for(let i=start;i<=end;i+=2){
+               let output=String.fromCharCode(i);
+               result.push(output);
+            }
+            return result;
+        }
+        console.log(num_range('a','z',2))
+
+        function merge(arr1,arr2){
+            let result=[...arr1,...arr2];
+            let obj={};
+            let out=[];
+            for(let i=0;i<result.length;i++){
+              obj[result[i]]=0;
+            }
+            for(let j in obj){
+                out.push(Number(j));
+            }
+            return out;
+        }
+        console.log(merge([1,2,3],[2,30,1]))
+
+        function input_range(start,end){
+            let result=[];
+            for(let i=0;i<end;i++,start++){
+                result.push(start)
+            }
+            return result
+        }
+        console.log(input_range(-6,4));
+
+        function nthlargest(arr,n){
+            arr=arr.sort((a,b)=>{
+                  return b-a
+            });
+            return arr=arr[n-1];
+        }
+        console.log(nthlargest([ 43, 56, 23, 89, 88, 90, 99, 652], 4))
+
+        function move(arr,old_index,new_index){
+            if(old_index<0){
+                old_index+=arr.length;
+            }
+            if(new_index<0){
+                new_index+=arr.length;
+            }
+             arr.splice(new_index,0,arr.splice(old_index,1)[0])
+             return arr
+        }
+        console.log(move([10, 20, 30, 40, 50],-1,-2))
+
+        function unzip(arrayOfArrays){
+        //    let arr1=[];
+        //    let arr2=[];
+        //    arr.forEach(val=>{
+        //     if(arr1.length==0){
+        //         arr1=val;
+        //     }
+        //     else{
+        //         arr2=val;
+        //     }
+        //    })
+        let flatternArray=arrayOfArrays.reduce((acc,curr)=>{
+            return acc.concat(curr);
+        },[])
+        return flatternArray;
+        }
+        console.log(unzip([['a', 1, true], ['b', 2, false]]))
+
+        function arrayCount(arr){
+            let count=0;
+            arr.forEach(val=>{
+                if(Array.isArray(val)){
+                    count++;
+                }
+            })
+            return count;
+        }
+        console.log(arrayCount([2,8,[6,3,3],[4],5,[3,4,[5,4]]]))
+
+        function factorChain(arr){
+            for(i=0;i<arr.length;i++){
+                if(arr[i+1] %arr[i]!=0){
+                    return false;
+                }
+                return true;
+            }
+        }
+        console.log(factorChain([2,4,8,16,32]))
+
+        function thirdSmallest(arr,n){
+           let a= arr.sort((a,b)=>{
+                return a-b;
+            })
+            return a[n-1];
+        }
+        console.log(thirdSmallest([2,3,5,7,1],3))
+
+        function isPrime(arr){
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]==1 || arr[i]>2 && arr[i]%2==0){
+                    return false;
+                }
+            }
+            return true
+        }
+        console.log(isPrime([2,3,5,7]))
+
+        const numbers=[15.5, 2.3, 1.1, 4.7];
+        let new_arr=numbers.reduce((total,a)=>{
+           return total += Math.round(a);
+        },0)
+        console.log(new_arr)
+
+        //alternative code for sum in reduce
+        const summeation=[34,56,78,90]
+        let newArr1=summeation.reduce((a,b)=>{
+            return a+b
+        })
+        console.log(newArr1)
+
+        const isArray=[12, 6, 8, 21, 4, 17];
+        let x=isArray.reduce((a,b)=>{
+           return Math.max(a,b);
+        })
+        console.log(x)
+
+        //Write a JavaScript program to find the sum of squares of a numerical vector.
+        let y=isArray.reduce((total,a)=>{
+            return total+=Math.pow(a,2);
+        },0)
+
+        console.log('summeation of numerical vector',y)
+
+        function longest_common_starting_substring(arr){
+            let substring='';
+            let shortestString=arr.reduce((short,long)=>{
+                return short.length<long.length?short:long;
+            })
+            for(let i=0;i<shortestString.length;i++){
+                // arr.every(str=>{
+                //     str[i]==shortestString[i]
+                //         substring += shortestString[i];
+                    
+                // })
+                if(arr.every(str=>str[i]==shortestString[i])){
+                    substring+=shortestString[i]
+                }
+            }
+            return substring
+        }
+        // console.log(longest_common_starting_substring(['go','google']))
+        console.log(longest_common_starting_substring(['flour','flower','flight']))
+
+
+        // Write a JavaScript program to remove all false values from an object or array.
+        const obj = {
+            a: null,
+            b: false,
+            c: true,
+            d: 0,
+            e: 1,
+            f: '',
+            g: 'a',
+            h:[null, false, '', true, 1, 'a'],
+            }
+
+            function remove(obj){
+                let newobj={};
+                for(let data in obj){
+                    if(obj.hasOwnProperty(data) && Array.isArray(obj[data])){
+                        alert('Array')
+                        let a=obj[data].filter(item=>item!=false && item!=null);
+                        newobj[data]=a;
+                    }
+                    if(obj.hasOwnProperty(data) && obj[data] && !Array.isArray(obj[data])){
+                         newobj[data]=obj[data];
+                    }
+                }
+                return newobj;
+            }
+            console.log(remove(obj))
+
+        //find a Electric bill by conditionally 1. your amount is 1000 and form 1 to 7 days no intrest after 7 to 15 500rs add and after that 10% intrest add in bill payment
+        function annulalIntrest(){
+        let amount=1000;
+        let rate=0.1;
+        let bill=0;
+        let date=window.prompt('Enter an date');
+        date=Number(date);
+        if(date>0 && date<=7){
+            alert('No Bill Yet')
+        }
+        else if(date>7 && date<=15){
+            bill+=amount+500;
+        }
+        else if(date>15){
+            let pastdays=date-15;
+            bill+= amount + (rate*pastdays);
+        }
+        return alert('The Bill is '+ bill);
+    }
+    annulalIntrest();
+    </script>
+
+</body>
