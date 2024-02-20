@@ -260,7 +260,7 @@
             }
             console.log(remove(obj))
 
-        //find a Electric bill by conditionally 1. your amount is 1000 and form 1 to 7 days no intrest after 7 to 15 500rs add and after that 10% intrest add in bill payment
+        //find a Electric bill by conditionally 1. your amount is 1000 and form 1 to 7 days no intrest after 7 to 15 500rs add and after that 10% intrest on each day add in bill payment
         function annulalIntrest(){
         let amount=1000;
         let rate=0.1;
@@ -280,6 +280,353 @@
         return alert('The Bill is '+ bill);
     }
     annulalIntrest();
+
+
+    let str_1='artyuoioryuews';
+    function vowels(str){
+        let v=['a','e','i','o','u'];
+        let result=str.split('');
+        let count=0;
+        for(let i=0;i<result.length;i++){
+            if(v.includes(result[i])) count++
+        }
+        console.log(count)
+        return count;
+    }
+    vowels(str_1)
+
+    let str_2='avfr kurewq opuy';
+    function removeSpace(str){
+        let result=str.split('');
+        console.log(result)
+        let newArr=result.filter(ele=>!ele.includes(' '))
+        console.log(newArr);
+        return newArr;
+    }
+    removeSpace(str_2)
+
+    function reverse(arr){
+        let a=arr.sort((a,b)=>{
+            return b-a;
+        });
+
+        console.log(a)
+    }
+    reverse([1,2,3,4,5,6])
+
+    //or
+    console.log([1,2,3,4,5,6].reverse());
+
+    //Print odd numbers
+    function oddNumbers(){
+        for(let i=0;i<=100;i++){
+            if(i%2!=0){
+                console.log('odd',i)
+            }
+        }
+    }
+    oddNumbers();
+    
+    //Print all the multiplication tables with numbers from 1 to 10
+    function tables(){
+        for(let i=1;i<=10;i++){
+            multiplication(i);
+        }
+    }
+    function multiplication(n){
+        console.log('table of',n)
+        for(let i=1;i<=10;i++){
+            console.log(n*i);
+        }
+    }
+    tables();
+
+    //Calculate the sum of numbers from 1 to 10
+    function sumfrom(){
+        let sum=0
+        for(let i=1;i<=10;i++){
+            sum+=i;
+        }
+        console.log(sum)
+        return sum;
+    }
+
+    sumfrom();
+
+    // Calculate the sum of odd numbers greater than 10 and less than 30
+
+    function calcOdd(){
+        let sum=0;
+        for(let i=11;i<30;i+=2){
+            sum+=i;
+        }
+        return sum;
+    }
+    console.log(calcOdd());
+
+    //Calculate the average of the numbers in an array of numbers
+
+    function avgArr(arr){
+        let sum=0;
+        for(let i=0;i<arr.length;i++){
+            sum+=+arr[i];
+        }
+        let avg=sum/arr.length;
+        console.log(avg);
+        return avg
+    }
+    avgArr([1,2,3,4,5,6])
+
+    // Find the maximum number in an array of numbers
+
+    function maxNumber(arr){
+        let defaultValue=+arr[0];
+        for(let i=0; i<arr.length;i++){
+            if(+arr[i]>defaultValue){
+                defaultValue=+arr[i]
+            }
+        }
+        console.log(defaultValue);
+        return defaultValue
+    }
+    maxNumber([2,4,6,1,2,10]);
+
+    //Prime or not
+    function isPrime(n){
+        if(n==1 || n>2 || n%2!=0){
+            return Boolean;
+        }
+    }
+    console.log(isPrime(1))
+
+    //: Rotate an array to the left 1 position
+
+    function rotate(arr){
+        let temp=arr[0];
+        for(let i=0;i<arr.length;i++){
+            if(i!=arr.length-1){arr[i]=arr[i+1];}
+            else{
+                arr[i]=temp;
+            }
+        }
+        return arr;
+    }
+    console.log(rotate([1,2,3,4,5]));
+
+    // reverse a string
+    function reversestring(str){
+        let a=str.split('');
+        let result=[];
+        for(let i=a.length-1;i>=0;i--){
+            result.push(a[i]);
+        }
+        return result.join('');
+    }
+    console.log(reversestring('Javascript'));
+
+    //merging of two array
+    let arr_1=[1,2,3,4,5];
+    let arr_2=[7,8,9,4,6];
+    let result=[...arr_1,...arr_2];
+    console.log(result);
+
+    //Create a function that will receive an array of numbers as argument and will return a new array with distinct elements
+
+    function distinct(arr){
+        let result=[];
+        arr.forEach(ele=>{
+            if(!result.includes(ele)){
+                result.push(ele);
+            }
+        })
+        console.log(result);
+        return result;
+    }
+    distinct([7,8,7,5,6,8,4,9,4]);
+
+    function cocequetive(){
+        let arr=[];
+        for(let i=0;i<=100;i++){
+            if(i==1){
+                arr.push(i);
+            }
+            if(i>2 && i%2!=0){
+                arr.push(i);
+            }
+        }
+        console.log(arr);
+
+        let difference=[];
+        for(let i=0;i<arr.length;i++){
+            if(arr[i+1]==undefined)return difference;
+            difference.push(arr[i+1]-arr[i])
+        }
+        console.log(difference)
+    }
+    cocequetive();
+
+    let n1 = "2909034221912398942349";
+    let n2 = "1290923909029309499";
+
+    function addString(){
+        let a1=n1.split('');
+        let a2=n2.split('');
+        let result=[];
+        for(let i=0;i<a1.length;i++){
+            if(a2[i]==undefined){
+                a2[i]=0;
+            }
+            result.push(Number(a1[i])+Number(a2[i]))
+        }
+        console.log(result.join(''));
+        return result.join('');
+    }
+    addString();
+
+    let big_str='the quick brown fox jumps over the lazy dog'
+    function capitalize(str){
+        let result=str.split(' ');
+        console.log(result);
+        for(let i=0;i<result.length;i++){
+            result[i]=result[i][0].toUpperCase() + result[i].substring(1);
+        }
+        console.log(result.join(' '))
+        return result.join(' ');
+    }
+    capitalize(big_str);
+
+    let comma_delimited='1.5, 2.3, 3.1, 4, 5.5, 6, 7, 8, 9, 10.9'
+    function comma_delimited_1(str){
+        let result=str.split(',');
+        let sum=0;
+        result.forEach(ele=>{
+            sum+=Number(ele);
+        })
+        console.log(sum);
+        return sum;
+    }
+    comma_delimited_1(comma_delimited)
+
+    //Create a function that will receive a bi-dimensional array as argument and a number and will extract as a unidimensional array the column specified by the number.
+    let ar = [ ["John", 120],
+            ["Jane", 115],
+            ["Thomas", 123],
+            ["Mel", 112],
+            ["Charley", 122]
+        ];
+    
+        function extractColumn(arr,n){
+            let resultArray=[];
+            arr.forEach(ele=>{
+                resultArray.push(ele[n]);
+            })
+            console.log(resultArray);
+            return resultArray
+        }
+        extractColumn(ar,1)
+
+        let binarynum='1101';
+        let number=parseInt(binarynum,2);
+        console.log('convert',number);
+
+        //find sum in jagged array;
+        let ar1= [1, 2, [15, [23], [5, 12]], [100]];
+        function flattern(arr){
+            let sum=0;
+           let resultarr= arr.reduce((result,current)=>{
+                if(Array.isArray(current)){
+                    return result.concat(flattern(current))
+                }else{
+                    return  result.concat(current);
+                }
+            },[]);
+            resultarr.forEach(ele=>{
+                sum+=ele;
+            })
+            return sum
+        }
+        console.log(flattern(ar1));
+
+        // find max in jagged
+        function maxJag(arr){
+            let max;
+            let newArr= arr.reduce((result,current)=>{
+                if(Array.isArray(current)){
+                    return result.concat(flattern(current))
+                }
+                else{
+                    return result.concat(current)
+                }
+            },[]);
+            max=newArr[0];
+            newArr.forEach(ele=>{
+                if(ele>max){
+                    max=ele;
+                }
+            })
+            console.log(max)
+            return max;
+        }
+        maxJag([1, 2, [15, [23], [5, 12]], [100]])
+
+        //shuffle a string
+        let strArr = ["Shuffle", "an", "array", "of", "strings"];
+        function shuffle(arr){
+            let temp;
+            let ctr=arr.length;
+            while(ctr>0){
+                let randomIndex=Math.floor(Math.random() * ctr);
+                ctr--;
+                temp=arr[ctr];
+                arr[ctr]=arr[randomIndex];
+                arr[randomIndex]=temp;
+            }
+            console.log(arr)
+            return arr;
+        }
+        shuffle(strArr);
+
+        // Create a function that will receive n as argument and return an array of n unique random numbers from 1 to n.
+        function randomArray(start,end){
+            let resultArray=[];
+            for(let i=start;i<=end;i++){
+                let randomNumber=Math.floor(Math.random()* (end-start) + start)
+                resultArray.push(randomNumber);
+            }
+            console.log(resultArray);
+            return resultArray;
+        }
+        randomArray(1,10);
+
+        // Find the frequency of characters inside a string. Return the result as an array of objects. Each object has 2 fields: character and number of occurrences.
+        let occurenceString='javascript';
+        // let occurenceString='Dattatray'
+        function occurence(str){
+            let arr=str.split('');
+            let count=1;
+            let resultarr=[];
+            let out=[];
+            for(let i=0;i<arr.length;i++){
+                count=1;
+                for(let j=i;j<arr.length;j++){
+                    if(arr[j+1]==undefined){
+                        break;
+                    }
+                    if(arr[i].toString()===arr[j+1].toString()){
+                        count++;
+                    }
+                }
+                let existingitem=resultarr.find(ele=>ele.charcter==arr[i]);
+                if(!existingitem){
+                    resultarr.push({'charcter':arr[i],'occurence':count});
+                }
+            }
+            console.log(resultarr);
+            return resultarr;
+        }
+
+        occurence(occurenceString);
+        
     </script>
 
 </body>

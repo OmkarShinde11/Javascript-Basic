@@ -13,9 +13,10 @@
       layer:['1','2','1 1/2'],
       kg:['1','1/2','1 1/2','2'],
     }
-     let shop_open=true;
+     let shop_open=false;
     let order=()=>{
       return new Promise((resolve,reject)=>{
+        if(shop_open){
         setTimeout(()=>{
           let a=prompt('Enter a flavour of cake')
           resolve(console.log(`You Choose ${a} flavour`))
@@ -49,15 +50,41 @@
             },3000)
           },3000)
         },3000)
+      }
+      else{
+        reject(console.log('Shop is Closed'))
+      }
       })
     }
 
     async function kitchen(){
-      console.log(`Welcome to Omkar Cake Shop`)
-      await order();
+      if(shop_open){
+        console.log(`Welcome to Omkar Cake Shop`)
+      }
+      try{
+        await order()
+      }
+      catch(error){
+        console.log(error)
+      }
     }
 
     kitchen()
+
+    console.log('start');
+
+      const promise1 = new Promise((resolve, reject) => {
+        console.log(1)
+        resolve(2)
+      })
+
+      promise1.then(res => {
+        console.log(res)
+      })
+
+      console.log('end');
+
+      //output is start 1 end 2 because code executed in synchrouness way at time of promise created but when there is use of then so then executed in asynchrouness way thats why end is printeed first.
   </script>
 </body>
 </html>

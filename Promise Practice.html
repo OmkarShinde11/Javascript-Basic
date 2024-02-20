@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log('start');
+
+        const promise1 = new Promise((resolve, reject) => {
+            console.log(1)
+            resolve(2)
+        })
+
+        promise1.then(res => {
+            console.log(res)
+        })
+
+        console.log('end');
+        //output is start 1 end 2 because code executed in synchrouness way at time of promise created but when there is use of then so then executed in asynchrouness way thats why end is printeed first.
+
+        let promise = new Promise((res, rej) => {
+            setTimeout(() => {
+                rej('Promise is rejected')
+            }, 1000)
+        })
+
+        promise.then(
+            (resolvevalue) => {
+                console.log('resolveValue', resolvevalue)
+            },
+            (rejectvalue) => {
+                console.log('rejectValue', rejectvalue)
+            }
+        )
+        //Alternative way
+        // if you know your promise is reject then instead of then you also use catch
+
+        let promise_1 = new Promise((res, rej) => {
+            setTimeout(() => {
+                rej('Promise is rejected')
+            }, 1000)
+        })
+
+        promise_1.catch(rej => {
+            console.log(rej)
+        })
+
+        // when promise is resolve it can't stat again so output is Promise is executed in first time
+        let promise2 = new Promise((res, rej) => {
+            res('Promise is executed in first time')
+            res('Promise is executed in second time')
+            res('Promise is executed in third time')
+        })
+
+        promise2.then(res => {
+            console.log(res)
+        })
+
+
+        // The function job must return a promise object The promise must resolve itself 2 seconds after the call to job and must provide hello world in the data
+        let job = new Promise((res, rej) => {
+            let data = 'Promise Response'
+            setTimeout(() => {
+                res(data)
+            }, 1000)
+        })
+
+        job.then(res => {
+            console.log(res);
+        })
+
+        //Your function must always return a promiseIf data is not a number, return a promise rejected instantly and give the data "error" (in a string)
+        // If data is an odd number, return a promise resolved 1 second later and give the data "odd" (in a string)
+        // If data is an even number, return a promise rejected 2 seconds later and give the data "even" (in a string)
+        let number = 8
+        let numberPromise = new Promise((res, rej) => {
+            if (typeof (number) == String) {
+                rej('Error')
+            }
+            else if (number % 2 != 0) {
+                setTimeout(() => {
+                    res('odd')
+                }, 1000)
+            }
+            else {
+                setTimeout(() => {
+                    rej('even')
+                }, 2000)
+            }
+        })
+
+        numberPromise.then(
+            res => { console.log(res) },
+            rej => { console.log(rej) }
+        )
+
+        //Chaining of Promise
+        let job1 = () => {
+            return new Promise((resolve, reject) => {
+                resolve('result of job1')
+            })
+        }
+
+        let job2 = () => {
+            return new Promise((res, rej) => {
+                res('result of job2')
+            })
+        }
+        var promise_chaining = job1();
+
+        promise_chaining.then(res => {
+            console.log(res);
+            return job2();
+        })
+            .then(res => {
+                console.log(res);
+                return 'Hello-World'
+            })
+            .then(res => {
+                console.log(res);
+            })
+
+
+        //.catch method on Promise
+
+        let method = () => {
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    rej('Promise is rejected')
+                }, 3000)
+            })
+        }
+        var CatchPromise = method();
+        CatchPromise.then(res => {
+            console.log('res', res);
+        })
+            .catch(rej => {
+                console.log('rej', rej);
+            })
+
+        //alternative way of then and catch is normal try catch block
+
+        let tryPromise = () => {
+            return new Promise((res, rej) => {
+                res('tryPromise worked')
+            })
+        }
+        try {
+            let data = tryPromise();
+            console.log(data)
+        }
+        catch (error) {
+            console.log(error)
+        }
+
+        // tricky part of Promise
+        //here ouput is 'Promise is start' because here we return Promise not promise.then means the chages that do in Promise.then is lost so instead of return Promise we return Promise.then();
+        let job_1 = () => {
+            return new Promise((res, rej) => {
+                res('Promise is start')
+            })
+        }
+        let doSomething = (data) => {
+            let result = data.split('');
+            if (result[0] == result[0].toUpperCase()) {
+                result[0] = result[0].toLowerCase();
+            }
+            let sentence = result.join('');
+            return sentence;
+        }
+
+
+        function test() {
+            var promise = job_1();
+            promise.then(function (data) {
+                doSomething(data);
+            });
+            return promise;
+        }
+        console.log('test function', test());
+
+        //Alternative way is:
+
+        function test_1() {
+            return job_1().then(res => {
+                console.log("hey", res)
+                return (doSomething(res));
+            })
+        }
+        console.log('test_1', test_1())
+
+        //Promise.any();
+        // The Promise.any() method is one of the promise concurrency methods. This method is useful for returning the first promise that fulfills. It not wait  after a promise fulfills, so it does not wait for the other promises to complete once it finds one.
+        const anyPromise1 = Promise.reject(0);
+        const anyPromise2 = new Promise((resolve, reject) => { setTimeout(() => { resolve('slow') }, 500) });
+        const anyPromise3 = new Promise((resolve, reject) => { setTimeout(() => { resolve('quick') }, 100) });
+
+        const anyPromises = [anyPromise1, anyPromise2, anyPromise3];
+        Promise.any(anyPromises).then(val => console.log(val), error => { console.log(error) });
+
+        //Promise.all();
+        //The Promise.all() method is one of the promise concurrency methods. It can be useful for aggregating the results of multiple promises. Promise.all() will reject immediately upon any of the input promises rejecting.
+
+        const allPromise1 = new Promise((resolve, reject) => { setTimeout(() => { resolve('First Promise') }, 1000); });
+        const allPromise2 = new Promise((resolve, reject) => (setTimeout(() => { reject('second Promise') }, 100)));
+        const allPromise3 = new Promise((resolve, reject) => { setTimeout(() => { resolve('third Promise') }, 3000) });
+
+        const allPromise = [allPromise1, allPromise2, allPromise3];
+        Promise.all(allPromise).then(val => { console.log(val) }, error => { console.log(error) });
+
+        // What if you want to start multiple asynchronous jobs at once and you want results even if a job is rejected?
+        const allPromise11 = new Promise((resolve, reject) => { setTimeout(() => { resolve('First Promise') }, 1000); });
+        const allPromise22 = new Promise((resolve, reject) => (setTimeout(() => { reject('second Promise') }, 100)));
+        const allPromise33 = new Promise((resolve, reject) => { setTimeout(() => { resolve('third Promise') }, 3000) });
+
+        const allPromise20 = Promise.all([allPromise11.catch(() => { }), allPromise22.catch(() => { }), allPromise33.catch(() => { }),]);
+        allPromise20
+
+            .then(function (data) {
+                data.forEach(function (data) {
+                    console.log(data);
+                });
+            })
+
+            .catch(function (error) {
+                console.error('error', error);
+            });
+        // Promise.allSettled();
+        //The Promise.allSettled() method is one of the promise concurrency methods. Promise.allSettled() is typically used when you have multiple asynchronous tasks that are not dependent on one another to complete successfully, 
+        //In comparison, the Promise returned by Promise.all() may be more appropriate if the tasks are dependent on each other, or if you'd like to immediately reject upon any of them rejecting.
+
+        const allPromise_1 = new Promise((resolve, reject) => { setTimeout(() => { resolve('First Promise') }, 1000); });
+        const allPromise_2 = new Promise((resolve, reject) => (setTimeout(() => { reject('second Promise') }, 100)));
+        const allPromise_3 = new Promise((resolve, reject) => { setTimeout(() => { resolve('third Promise') }, 3000) });
+        const all_promise = [allPromise_1, allPromise_2, allPromise_3];
+        Promise.allSettled(all_promise).then(res => { console.log(res) });
+
+
+        //Promise.race();
+        // The Promise.race() method is one of the promise concurrency methods. It's useful when you want the first async task to complete, but do not care about its eventual state (i.e. it can either succeed or fail).
+        // in short give a promise which resolve or reject faster
+        const racePromise_1 = new Promise((resolve, reject) => { setTimeout(reject('Promise is rejected in race')), 100 });
+        const racePromise_2 = new Promise((resolve, reject) => { setTimeout(resolve('Promise is resolved')), 500 });
+        Promise.race([racePromise_1, racePromise_2]).then(res => { console.log(res) }, error => { console.log(error) });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Solving</title>
+</head>
+<body>
+    <script>
+        function booleanCount(arr){
+            let count=0;
+            if(arr.length==0){
+                return count;
+            }
+            arr.forEach(element => {
+                if(element==true){
+                    count++;
+                }
+            });
+            console.log('booleanCount',count)
+            return count;
+        }
+        booleanCount([true,false,false,true,false]);
+
+        // function redundant(str){
+        //     let modifiedstr=str.toUpperCase();
+        //     return redundant1(modifiedstr);
+        // }
+        // function redundant1(str){
+        //     return str;
+        // }
+        // redundant('apple');
+
+        // In a board game, a piece may advance 1-6 tiles forward depending on the number rolled on a six-sided die. If you advance your piece onto the same tile as another player's piece, both of you earn a bonus. Can you reach your friend's tile number in the next roll? Create a function that takes your position a and your friend's position b and returns a boolean representation of whether it's possible to earn a bonus on any die roll.
+
+
+        function boardGame(a,b){
+            let distance=b-a;
+            if(distance>=1 && distance<=6){
+                return true;
+            }
+        }
+        console.log('bonus',boardGame(2,8))
+
+        //The right shift operation is similar to floor division by powers of two.
+        function rightShiftDivision(x,y){
+            let a=x/Math.pow(2,y);
+            return a;
+        }
+        console.log('division',rightShiftDivision(80,3))
+
+        //Write a function that takes a number and returns the perimeter of either a circle or a square. The input will be in the form (letter l, number num) where the letter will be either "s" for square, or "c" for circle, and the number will be the side of the square or the radius of the circle.
+        function calc(letter,number){
+            return letter=='s'? 4*number:6.28*number;
+        }
+        console.log('Calculation',calc('s',8));
+ 
+        //Create a function that will return an integer number corresponding to the amount of digits in the given integer num.
+        function numberDigit(num){
+            let count;
+            if(num>=0 && Number.isInteger(num)){
+                count=1;
+                while(num>=10){
+                    num=Math.floor(num/10);
+                    count++;
+                }
+            }
+            else{
+                return -1
+            }
+            return count;
+        }
+        console.log(numberDigit(1000))
+
+        //Given three arguments ⁠— an object obj of the stolen items, the pet's name and a value ⁠— return an object with that name and value in it (as key-value pairs).
+        function addName(obj,name,value){
+            obj[name]=value;
+            console.log(obj)
+            return obj
+        }
+        let obj={"piano":300};
+        addName(obj,"Brutus",400)
+
+        //Create a function that takes numbers b and m as arguments and returns the derivative of the function f(x)=x^b with respect to x evaluated at x=m, where b and m are constants. 
+        // b * x^(b-1)
+        function derivative(b,m){
+            let result= b * Math.pow(m,b-1);
+            console.log(result);
+            return result;
+        }
+        derivative(3,-2);
+
+        //Create a function that takes a number x and a character y ("m" for male, "f" for female), and returns the name of an ancestor (m/f) or descendant (m/f).
+        //If the number is negative, return the related ancestor.
+        //If positive, return the related descendant.
+        //You are generation 0. In the case of 0 (male or female), return "me!".
+        function generation(number,gender){
+            let obj={
+                "-3":{
+                    male:'great grandfather',
+                    female:'great grandmother'
+                },
+                '-2': {
+                    male: 'grandfather',
+                    female: 'grandmother'
+                },
+                '-1': {
+                    male: 'father',
+                    female: 'mother'
+                },
+                '0': {
+                    male: 'me!',
+                    female: 'me!'
+                },
+                '1': {
+                    male: 'son',
+                    female: 'daughter'
+                },
+                '2': {
+                    male: 'grandson',
+                    female: 'granddaughter'
+                },
+                '3': {
+                    male: 'great grandson',
+                    female: 'great granddaughter'
+                }
+            }
+            console.log(obj)
+            if(gender=='m'){
+                console.log(obj[number].male)
+                return obj[number].male;
+            }
+            else{
+                console.log(obj[number].female)
+                return obj[number].female;
+            }
+        }
+        generation(2,'f');
+
+        //A tetrahedron is a pyramid with a triangular base and three sides. A tetrahedral number is a number of items within a tetrahedron.Create a function that takes an integer n and returns the nth tetrahedral number.
+        function tetra(n){
+            let result=n * (n+1) *(n+2) /6;
+            console.log(result);
+            return result;
+        }
+        tetra(2)
+
+        //According to the lodash documentation, _.compact creates an array with all falsey values removed. The values false, null, 0, "", undefined, and NaN are falsey.
+        // Your task is to build this helper function without using lodash. You will write a function that receives an array and removes all falsey values.
+        function compact(arr){
+            let a=arr.filter(ele=>ele!=false && ele!=null && ele>0 && ele!=undefined && !isNaN(ele));
+            console.log(a);
+            return a;
+        }
+        compact([0, 1, false, 2, "", 3]);
+
+
+        function add(x){
+            return function add1(y){
+                return x+y;
+            }
+        }
+        console.log(add(10)(20));
+
+        //Write a function that converts an object into an array, where each element represents a key-value pair in the form of an array.
+        function toArray(obj){
+            let out=[];
+            for(let i in obj){
+                out.push([i,obj[i]]);
+            }
+            console.log(out)
+        }
+        toArray({"a":1,"b":2,"c":3})
+        toArray({});
+
+        //Create a function that concatenates n input arrays, where n is variable.
+        function concat(...arr){
+           let result=[].concat(...arr);
+           return result;
+        }
+        console.log(concat([1, 2, 3], [4, 5], [6, 7]));
+
+        function add_suffix(str){
+            let suffix='ly';
+            return str + suffix;
+        }
+        console.log(add_suffix('total'));
+        
+        function triangle(n){
+            return Math.floor(n * (n+1)/2)
+        }
+        console.log(triangle(6))
+
+        // Your task is to create a Circle constructor that creates a circle with a radius provided by an argument. The circles constructed must have two methods getArea() (PI*r^2) and getPerimeter() (2*PI*r) which give both respective areas and perimeter (circumference).
+        // For help with this class, I have provided you with a Rectangle constructor which you can use as a base example.
+        class Circle{
+            getArea(radius){
+                return Math.PI * Math.pow(radius,2);
+            }
+            getPerimeter(radius){
+                return Math.floor(2 * Math.PI * radius);
+            }
+        }
+        let circle= new Circle();
+        console.log(circle.getArea(11));
+        console.log(circle.getPerimeter(4.44))
+
+        //Given a total due and an array representing the amount of change in your pocket, determine whether or not you are able to pay for the item. Change will always be represented in the following order: quarters, dimes, nickels, pennies.
+        // To illustrate: changeEnough([25, 20, 5, 0], 4.25) should yield true, since having 25 quarters, 20 dimes, 5 nickels and 0 pennies gives you 6.25 + 2 + .25 + 0 = 8.50.
+        function changeEnough(arr,purchaseAmount){
+            const quarterValue = 0.25;
+            const dimeValue = 0.10;
+            const nickelValue = 0.05;
+            const pennyValue = 0.01;
+
+            let sum=arr[0]*0.25 + arr[1] * 0.10 + arr[2] * 0.05 + arr[3] * 0.01;
+            if(sum>=purchaseAmount){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        console.log(changeEnough([0, 0, 20, 5], 0.75));
+
+        //Create a function that takes two numbers as arguments (num, length) and returns an array of multiples of num until the array length reaches length.
+        function arrayOfMultiples(number,length){
+            let array=[];
+            for(let i=1;i<=length;i++){
+                array.push(Math.floor(number * i));
+            }
+            return array;
+        }
+        console.log(arrayOfMultiples(12,10));
+
+        //Create a function that takes an object and returns the keys and values as separate arrays. Return the keys sorted alphabetically, and their corresponding values in the same order.
+        function keysAndValues(obj){
+            let resultarr=[];
+            let keyArray=[];
+            let valueArray=[];
+            Object.keys(obj).forEach(ele=>{
+                keyArray.push(ele);
+            })
+            Object.values(obj).forEach(ele=>{
+                valueArray.push(ele)
+            });
+            resultarr=[keyArray,valueArray];
+            console.log(resultarr);
+            return resultarr
+        }
+        keysAndValues({ a: 1, b: 2, c: 3 })
+
+        function objectToArray(obj){
+            let result=[];
+            for(let i in obj){
+                result.push([i,obj[i]]);
+            }
+            console.log(result)
+            return result
+        }
+        objectToArray({D:1,B:2,C:3});
+
+        //A repdigit is a positive number composed out of the same digit. Create a function that takes an integer and returns whether it's a repdigit or not.
+        function isRepdigit(number){
+            if(number==0){
+                return true;
+            }
+            if(number<0){
+                return false;
+            }
+            let a=String(number).split('');
+            let random=a[0];
+            return a.every((ele,i)=>random==ele);
+            
+        }
+        console.log(isRepdigit(66))
+        console.log(isRepdigit(89))
+
+        //Write a class called Rectangle that represents a rectangular two-dimensional region. It should have the following constructor:
+        class Rectangle{
+            constructor(x,y,width,height){
+                this.x=x,
+                this.y=y,
+                this.width=width,
+                this.height=height
+            }
+
+            toString(){
+                return `[x=${this.x}, y=${this.y},width=${this.width},height=${this.height}]`;
+            }
+        }
+
+        let a=new Rectangle(1,2,3,4);
+        console.log(a.toString());
+
+        //Create a function that, given an array similar to the above, sorts the array according to the "content of the elements".
+        function sortIt(arr){
+            let a=arr.sort((a,b)=>{
+                return a-b;
+            })
+            return a
+        }
+        console.log(sortIt([[4], [1], [3]]));
+        console.log(sortIt([[4], 1, [3]]));
+        console.log(sortIt([[3], 4, [2], [5], 1, 6]));
+
+        function addSum(n){
+            return function(x){
+                return x+n;
+            }
+        }
+        let adds1=addSum(3);
+        console.log(adds1(2));
+
+        function removeLeadingTrailing(str){
+            const [integerpart,decimalpart]=str.split('.');
+            const cleanintger=integerpart?.replace(/^0+/,'');
+            const cleandecimal=decimalpart?.replace(/0+$/,'');
+            // console.log(cleandecimal);
+            const result= cleanintger?cleanintger:'0' + cleandecimal ?`.${cleandecimal}`:'';
+            console.log(result);
+            return result;
+        }
+        removeLeadingTrailing("00230.000")
+        removeLeadingTrailing("00402");
+
+        //Create a function that takes a "base number" as an argument. This function should return another function which takes a new argument, and returns the sum of the "base number" and the new argument.
+        function addPreview(n){
+            return function(x){
+                return n + x;
+            }
+        }
+        
+        let functionFactory=addPreview(4);
+        console.log(functionFactory(8));
+
+        let flatArr=[[1, 2], [3, 4]];
+        let newArr=[].concat(...flatArr);
+        console.log(newArr);
+
+        // Check the arrays are identical
+        function identical(arr1,arr2){
+            if(arr1.length!=arr2.length){
+                return false;
+            }
+            for(let i=0;i<arr1.length;i++){
+                if(arr1[i]!=arr2[i]){
+                    return false;
+                }
+            }
+            return true;
+        }
+        console.log(identical([13,26],[14,28]));
+
+        function secondLargest(arr){
+            return arr.sort((a,b)=>a-b)[arr.length-2];
+        }
+        console.log(secondLargest([10, 40, 30, 20, 50]));
+        console.log(secondLargest([25, 143, 89, 13, 105]));
+
+        // check the object
+        function isObject(value) {
+                if (typeof (value) == 'object' && value != null) {
+                    return true;
+                }
+                return false;
+        }
+        console.log(isObject([1,2,3]))
+
+        function findDiscount(number,percentage){
+            return number * (100 - percentage) * 0.01
+        }
+        console.log(findDiscount(150,75));
+
+        //Create a function that takes a country's name and its area as arguments and returns the area of the country's proportion of the total world's landmass.
+        function areaOfCountry(countryName,countryArea,worldsarea){
+            let result=(countryArea/worldsarea)*100;
+            console.log(result.toFixed(2));
+            return `${countryName} is ${result.toFixed(2)}% of the total world's landmass`;
+        }
+        console.log(areaOfCountry("Russia", 17098242,148940000));
+
+        //Create a function that takes an array of numbers and return "Boom!" if the digit 7 appears in the array. Otherwise, return "there is no 7 in the array".
+        function sevenBoom(arr){
+            let result=arr.join('');
+            for(let i=0;i<result.length;i++){
+                if(result[i]==7){
+                    return 'BOOM'
+                }
+            }
+            return `there is no 7 in the array`;
+        }
+        console.log(sevenBoom([2, 55, 60, 97, 86]))
+        console.log(sevenBoom([8, 6, 33, 100]));
+        console.log(sevenBoom([2, 6, 7, 9, 3]))
+
+
+        //A boomerang is a V-shaped sequence that is either upright or upside down. Specifically, a boomerang can be defined as: sub-array of length 3, with the first and last digits being the same and the middle digit being different.
+        // Some boomerang examples:
+        // [3, 7, 3], [1, -1, 1], [5, 6, 5]
+        function boomrang(arr){
+            let count=0;
+            for (let i=0;i<arr.length;i++){
+                if(arr[i+2]==undefined){
+                    break;
+                }
+                if(arr[i]==arr[i+2] && arr[i]!=arr[i+1]){
+                    count++
+                }
+            }
+            console.log(count);
+            return count;
+        }
+        boomrang([9, 5, 9, 5, 1, 1, 1]);
+        boomrang([5, 6, 6, 7, 6, 3, 9]);
+        
+        //Create a function that determines whether a number is Oddish or Evenish. A number is Oddish if the sum of all of its digits is odd, and a number is Evenish if the sum of all of its digits is even. If a number is Oddish, return "Oddish". Otherwise, return "Evenish".
+        function oddishOrEvenish(number){
+            let result=number.toString().split('');
+            let sum=0;
+            for(let i=0;i<result.length;i++){
+                sum+=Number(result[i]);
+            }
+            if(sum%2==0){
+                return 'Evenish'
+            }
+            return 'Oddish'
+        }
+        console.log(oddishOrEvenish(43));
+
+        //Write a function that returns the total number of non-nested items in a nested array.
+        //Suppose we instead wanted to know the total number of non-nested items in the nested array. In the above case, [1, [2, 3]] contains 3 non-nested items, 1, 2 and 3.
+        function getLength(arr){
+            let newArr=arr.flat(Infinity);
+            console.log(newArr.length);
+        }
+        getLength([1, [2, [3, [4, [5, 6]]]]]);
+        getLength([1, [2, [3, 4]]]);
+
+        //Create a function that takes an array of strings and returns an array with only the strings that have numbers in them. If there are no strings containing numbers, return an empty array.
+        // Without Regex;
+        function numInStr(arr){
+            let newArr=[];
+            let flag;
+            arr.forEach(element => {
+                for(let i=0;i<element.length;i++){
+                    if(isDigit(element[i])){
+                        newArr.push(element);
+                        break;
+                    }
+                }
+           });
+           console.log(newArr);
+           return newArr;
+        }
+        numInStr(["abc", "ab10c", "a10bc", "bcd"])
+
+        function isDigit(str){
+            return str>='0' && str<='9'
+        }
+
+        //An array is positive dominant if it contains strictly more unique positive values than unique negative values. Write a function that returns true if an array is positive dominant.
+        function isPositiveDominant(arr){
+            let postiveCount=0;
+            let negeativeCount=0;
+            let newArr=[];
+            let positiveFlag;
+            let negeativeFlag;
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]>0 && arr.indexOf(arr[i])==arr.length-1){
+                    postiveCount++;
+                    break;
+                }
+                if(arr[i]<0 && arr.indexOf(arr[i])==arr.length-1){
+                    negeativeCount++;
+                    break;
+                }
+                for(let j=i;j<arr.length;j++){
+                    if(newArr.includes(arr[i]) || arr[j+1]==undefined || arr[i]==0){
+                        break;
+                    }
+                    if(arr[i]>0){
+                        if(arr[i]!=arr[j+1]){
+                            positiveFlag=true;
+                        }
+                        else{
+                            positiveFlag=false;
+                            postiveCount++;
+                            break;
+                        }
+                    }
+                    if(arr[i]<0){
+                        if(arr[i]!=arr[j+1]){
+                            negeativeFlag=true;
+                        }
+                        else{
+                            negeativeCount=false;
+                            negeativeCount++;
+                            break;
+                        }
+                    }
+                }
+                newArr.push(arr[i]);
+                if(positiveFlag){
+                    postiveCount++;
+                    positiveFlag=false;
+                };
+                if(negeativeFlag){
+                    negeativeCount++;
+                    negeativeFlag=false;
+                };
+            }
+            console.log( `Positive ${postiveCount} and Negative ${negeativeCount}`);
+            if(postiveCount>negeativeCount){
+                return true;
+            }
+            else{
+                return false
+            }
+        }
+        console.log(isPositiveDominant([5, 99, 832, -3, -4]));
+        console.log(isPositiveDominant([5,99,5,-3,-4]));
+        console.log(isPositiveDominant([1, 1, 1, 1, -3, -4]));
+
+        //Create a function that takes an array of objects (groceries) which calculates the total price and returns it as a number. A grocery object has a product, a quantity and a price, for example:
+// {
+//   "product": "Milk",
+//   "quantity": 1,
+//   "price": 1.50
+// }
+        function getTotalPrice(arr){
+            let sum=0;
+            arr.forEach(ele=>{
+                sum+=Number(Math.round(ele.price));
+            })
+            console.log(sum);
+            return sum;
+        }
+        getTotalPrice([
+        { product: "Milk", quantity: 1, price: 1.50 },
+        { product: "Eggs", quantity: 12, price: 0.10 },
+        { product: "Bread", quantity: 2, price: 1.60 },
+        { product: "Cheese", quantity: 1, price: 4.50 }
+        ])
+        
+        //A pandigital number contains all digits (0-9) at least once. Write a function that takes an integer, returning true if the integer is pandigital, and false otherwise.
+        function isPandigital(str){
+            console.log(str.toString())
+            let arr=str.toString().split('');
+            console.log(arr);
+            for (let i=0;i<=9;i++){
+                if(!arr.includes(i.toString())){
+                    return false;
+                }
+            }
+            return true;
+        }
+        console.log(isPandigital(1122334455667788));
+
+
+//Create a function that returns the frequency distribution of an array. This function should return an object, where the keys are the unique elements and the values are the frequency in which those elements occur.
+        function getFrequencies(arr){
+            let obj={};
+            let duplicate=[];
+            let count=1
+            if(arr.length==0){
+                return obj;
+            }
+            for(let i=0;i<arr.length;i++){
+                if(!duplicate.includes(arr[i])){
+                    for(let j=i;j<arr.length;j++){
+                        if(arr[i]==arr[j+1] && arr[j+1]!=undefined){
+                            count++
+                        }
+                    }
+                    duplicate.push(arr[i]);
+                    obj[arr[i]]=count;
+                    count=1;
+                }
+            }
+            console.log(obj);
+            return obj
+        }
+        getFrequencies(["A", "B", "A", "A", "A"]);
+        getFrequencies([1, 2, 3, 3, 2]);
+        getFrequencies([true, false, true, false, false])
+        console.log(getFrequencies([]));
+
+        // Create an ordered 2D array (matrix). A matrix is ordered if its (0, 0) element is 1, its (0, 1) element is 2, and so on. Your function needs to create an a × b matrix. a is the first argument and b is the second.
+        function orderedMatrix(a,b){
+            let result=a * b;
+            let arr=[];
+            let counter=1
+            for(let i=0;i<a;i++){
+                let row=[];
+                for(let j=0;j<b;j++){
+                    row.push(counter++)
+                }
+                arr.push(row);
+            }
+           console.log(arr);
+           return arr;
+        }
+        orderedMatrix(1,5)
+    </script>
+</body>
+</html>

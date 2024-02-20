@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curry Function</title>
+</head>
+<body>
+    <h1 id="header">Hello</h1>
+    <script>
+        function curryadd(a){
+            return function(b){
+                return function(c){
+                    return a+b+c;
+                }
+            }
+        }
+        console.log(curryadd(1)(2)(3))
+
+        function sum(value){
+            let sum=value;
+             return function nextcurry(nextval){
+                if(nextval==undefined){
+                    return sum
+                }
+                sum+=nextval;
+                return nextcurry;
+            }
+            
+        }
+        console.log(sum(1)(2)(10)(20)())
+
+
+        function outerfunction(x){
+            return function innerfunction(y){
+                return x+y;
+            }
+        }
+
+        console.log(outerfunction(3)(2));
+
+        let arr=[['a','b'],['a','c'],['d','e'],['e','f']];
+
+        function random(arr){
+            let obj={};
+            let arr1=[];
+            for( const [key,value] of arr){
+                if(!(key in obj)){
+                    obj[key]=[value];
+                }
+                else{
+                    obj[key].push(value)
+                }
+            }
+            return obj
+        }
+        console.log(random(arr))
+
+        // This code is work for unique string or no duplicate allowed.
+        let str=prompt('Enter a string');
+        function convert(str){
+            let a=str.split('');
+            console.log(a);
+            let obj={};
+            let result;
+            for(let i=0;i<a.length;i++){
+                if(a.indexOf(a[i])!=a.length-1 && a.indexOf(a[i])==0){
+                   result=obj[a[i]]=new Object();
+                }
+                if(a.indexOf(a[i])!=a.length-1 && a.indexOf(a[i])!=0 && a.indexOf(a[i])!=a.length-2){
+                    result=result[a[i]]=new Object();
+                }
+                if(a.indexOf(a[i])==a.length-2 && a.indexOf(a[i])!=0){
+                    result=result[a[i]]=+a[i+1]
+                }
+            }
+            console.log(obj);
+            return obj
+        }
+        convert(str);
+
+        //this is for duplicate; like str_1
+        let str_1='abvavgt6'
+
+        function convert_1(){
+            let arr=str_1.split('');
+            console.log(arr)
+            let obj={};
+            let result;
+            for(let i=0;i<arr.length;i++){
+                if(typeof(arr[i+1])=="string" && isNaN(parseInt(arr[i+1]))){
+                    if(result==undefined){
+                        result=obj[arr[i]]=new Object();
+                    }
+                    else{   
+                        result=result[arr[i]]=new Object();
+                    }
+                }
+                else{
+                    result=result[arr[i]]=+arr[i+1];
+                }
+            }
+            console.log(obj);
+            return obj;
+        }
+        convert_1();
+
+        // let str_2='ab1cd5';
+        // let str_2='asdf5tyu7'
+        let str_2='a.b.v.4.h.t.r.5.t.u.x.6'
+        // let str_2=prompt('Enter String 2')
+        function convert_3(str_2){
+            let arr=str_2. split('.');
+            console.log(arr);
+            let result;
+            let obj={};
+            for(let i=0;i<arr.length;i++){
+                if(typeof arr[i+1]=='string' && isNaN(parseInt(arr[i+1])) && (!(toString.call(result)=='[object Array]') || result==undefined)){
+                    if(result==undefined){
+                        result=obj[arr[i]]=new Object();
+                    }
+                    else{
+                        result=result[arr[i]]=new Object();
+                    }
+                }
+                if(Array.isArray(result)){
+                    // result.splice(arr[i],0,new Object());
+                    for(let j=0;j<=+arr[i];j++){
+                        result.splice(j,0,undefined);
+                    }                    
+                    result[arr[i]]=new Object();
+                    result=result[arr[i]];
+                }
+                else{
+                    if(!isNaN(parseInt(arr[i+1])) && arr.indexOf(arr[i+1])!=arr.length-1){
+                        result=result[arr[i]]=[];
+                    }
+                    if(!isNaN(parseInt(arr[i+1])) && arr.indexOf(arr[i+1])==arr.length-1){
+                        result=result[arr[i]]=+arr[i+1];
+                    }
+                }
+            }
+            console.log(obj)
+            return obj;
+        }
+        convert_3(str_2);
+
+
+
+        let dbs = {
+            db1: 'db1',
+            db2: 'db2',
+            db3: 'db3',
+        }
+
+        function central(id) {
+            return new Promise((resolve, reject) => {
+                if (dbs[id]!=undefined) {
+                    resolve({
+                        id: dbs[id],
+                        username: 'Omkar11',
+                        country: 'India'
+                    });
+                }
+                else {
+                    reject(`Error in Central System or Error in ${id}`)
+                }
+            })
+        }
+
+        function vault(id) {
+            return new Promise((resolve, reject) => {
+                if (dbs[id]!=undefined) {
+                    resolve(
+                        {
+                            firstName: 'Omkar',
+                            lastName: 'Shinde',
+                            email: 'omkarshinde111220012gmail.com'
+                        }
+                    )
+                }
+                else {
+                    reject('Error in Vault')
+                }
+            })
+        }
+
+        // function db(id){
+        //     let obj;
+        //     return new Promise((resolve,reject)=>{
+        //         central(id).then(data=>{
+        //             obj={
+        //                 id: data.id,
+        //                 username:data.username,
+        //                 country:data.country,
+        //             };
+        //             return vault(id);
+        //         })
+        //         .then(data=>{
+        //             obj.firstName=data.firstName;
+        //             obj.lastName=data.lastName;
+        //             obj.email=data.email;
+        //             resolve(obj);
+        //         })
+        //         .catch(err=>{
+        //             reject(err);
+        //         })
+        //     })
+        // }
+
+        // Alternative way
+        function db(id){
+            return new Promise((resolve,reject)=>{
+                Promise.all([central(id),vault(id)]).then(res=>{
+                    let obj={};
+                    obj.id=res[0].id;
+                    obj.username=res[0].username;
+                    obj.country=res[0].country;
+                    obj.firstName=res[1].firstName;
+                    obj.lastName=res[1].lastName;
+                    obj.email=res[1].email;
+                    resolve(obj);
+                }).catch(err=>{
+                    reject(err);
+                })
+            })
+        }
+        db('db3').then(res=>{
+            console.log(res);
+        }).catch(err=>{
+            console.log(err)
+        })
+        
+
+        const datas=[
+            {name:'omkar',Profression:'Software Developer'},
+            {name:'Sid',Profression:'Packaging Executive'}
+        ]
+
+        //this is using Promise
+
+        // function getDatas(){
+        //     console.log('UpdatedData',datas);
+        // }
+        // function createDatas(newData){
+        //     return new Promise((resolve,reject)=>{
+        //         if(newData){
+        //             setTimeout(()=>{
+        //                 datas.push(newData);
+        //                 resolve(datas);
+        //             },2000)
+        //         }
+        //         else{
+        //             reject('Error in Data');
+        //         }
+        //     })
+        // }
+        // createDatas({name:'Rahul',Profresssion:'Packaging Intern'}).then(res=>{
+        //     console.log(res);
+        //     getDatas();
+        // }).catch(err=>{
+        //     console.log(err);
+        // });
+
+        //Alternative way callback
+
+        // function getDatas(){
+        //     setTimeout(()=>{
+        //         console.log('Updated Data',datas)
+        //     },1000)
+        // }
+
+        // function createDatas(newData,callbackfn){
+        //     setTimeout(()=>{
+        //         datas.push(newData);
+        //         callbackfn();
+        //     },2000)
+        // }
+        // createDatas({name:'Rahul',Profression:'Packaging Intern'},getDatas);
+
+        //Alternative way Async/Await
+
+        function getDatas(){
+            setTimeout(()=>{
+                console.log('Updated Data',datas)
+            },1000)
+        }
+
+        async function createDatas(newData){
+            await datas.push(newData);
+            getDatas();            
+        }
+        createDatas({name:'Rahul',Profression:'Packaging Intern'});
+
+        function currying(value){
+            let sum=value;
+            function next(num){
+                if(num==undefined){
+                    return sum;
+                }
+                sum+=num;
+                return next
+            }
+            return next;
+        }
+        console.log(currying(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)());
+
+        //Partially applied currying to a function
+        //here we give parameter one by one not pass at a time.
+        let updateContent= id=>content=> document.querySelector(`#${id}`).textContent=content;
+        let add=updateContent('header');
+        console.log(add);
+        let update=add('Hello Dave');
+        console.log(update);
+
+        // const addCustomer= fn=> (...args)=>{
+        //     console.log('saving customerinfo');
+        //     return fn(...args)
+        // }
+
+        // const processCustomer=fn=>(...args)=>{
+        //     console.log('order ', ...args,' is processing');
+        //     return fn(...args);
+        // }
+        // const completorder=(...args)=>{
+        //     console.log('order ',[...args].toString(),' completed');
+        // }
+        // completeorder=addCustomer(completorder);
+        // completeorder=processCustomer(completeorder);
+        // completorder('1000');
+    </script>
+</body>
+</html>
